@@ -14,7 +14,7 @@ import { LanguageSelector } from "@/components/language-selector";
 import type { PlaceWithDetails } from "@/lib/supabase";
 import { Sun, Cloudy, Plane, BookImage, Car, NotebookPen } from "lucide-react";
 import { TypeAnimation } from "react-type-animation";
-
+import FloatingChat from "./chat/chat";
 const heroImages = [
   {
     src: "https://dsavplsjsnonyvaqhdsq.supabase.co/storage/v1/object/public/turismo/TURISMO_NATURALEZA/Laguna%20Guapilo%20PH%20Carlojvlog%20EDIT-0.jpg",
@@ -456,6 +456,7 @@ export default function HomePage() {
               >
                 Rincones para Disfrutar
               </Link>
+              
             </nav>
 
             {/* Desktop Language Selector */}
@@ -1125,6 +1126,9 @@ export default function HomePage() {
           </div>
         </div>
       </footer>
+
+      {/* Chat Component */}
+      <FloatingChat />
     </div>
   );
 }
