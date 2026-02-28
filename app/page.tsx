@@ -17,7 +17,7 @@ import { TypeAnimation } from "react-type-animation";
 import FloatingChat from "./chat/chat";
 const heroImages = [
   {
-    src: "https://dsavplsjsnonyvaqhdsq.supabase.co/storage/v1/object/public/turismo/TURISMO_NATURALEZA/Laguna%20Guapilo%20PH%20Carlojvlog%20EDIT-0.jpg",
+    src: "/plazaaaaz24.webp",
     alt: "Plaza 24 de Septiembre",
     title: "Plaza Principal",
     description: "Corazón histórico de Santa Cruz",
@@ -29,7 +29,7 @@ const heroImages = [
     description: "Arquitectura colonial en el centro",
   },
   {
-    src: "https://dsavplsjsnonyvaqhdsq.supabase.co/storage/v1/object/public/turismo/TURISMO_NATURALEZA/COLPA%20CARANDA-1.jpg",
+    src: "/guembeportadaaa.webp",
     alt: "Biocentro Güembé",
     title: "Biocentro Güembé",
     description: "Naturaleza y aventura",
@@ -1122,7 +1122,7 @@ export default function HomePage() {
           </div>
 
           <div className="border-t border-gray-800 mt-12 pt-8 text-center text-gray-400">
-            <p>&copy; 2025 Turismo Metropolitano. {t.allRightsReserved}</p>
+            <p>&copy; 2026 Turismo Metropolitano. {t.allRightsReserved}</p>
           </div>
         </div>
       </footer>

@@ -5,6 +5,7 @@ import Link from "next/link";
 import {Menu,X,MapPin,Clock,ChevronRight, ChevronLeft,XCircle,} from "lucide-react";
 import { motion } from "framer-motion";
 import { Youtube } from "lucide-react";
+import { url } from "inspector";
 
 export default function EventoPage() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -36,16 +37,19 @@ export default function EventoPage() {
           id: 1,
           title: "Fachada principal de CAINCO",
           description: "Edificio moderno en el centro de Santa Cruz",
+          url: "/caico.webp", // <-- RUTA DE TU IMAGEN AQUÍ
         },
         {
           id: 2,
           title: "Salón de eventos",
           description: "Espacio para conferencias y reuniones de negocios",
+          url: "/cainco1.webp", // <-- RUTA DE TU IMAGEN AQUÍ
         },
         {
           id: 3,
           title: "Área de trabajo colaborativo",
           description: "Espacios modernos para networking",
+          url: "/cainco2.webp", // <-- RUTA DE TU IMAGEN AQUÍ
         },
       ],
     },
@@ -61,11 +65,15 @@ export default function EventoPage() {
           id: 1,
           title: "Sede de CAO",
           description: "Centro de operaciones de la cámara agropecuaria",
+          url: "/cao.jpg", // <-- RUTA DE TU IMAGEN AQUÍ
+
         },
         {
           id: 2,
           title: "Eventos agropecuarios",
           description: "Feria anual de productos agrícolas",
+          url: "/cao1.webp", // <-- RUTA DE TU IMAGEN AQUÍ
+
         },
       ],
     },
@@ -81,16 +89,20 @@ export default function EventoPage() {
           id: 1,
           title: "Centro de exportadores",
           description: "Sede principal de CADEX",
+          url: "/cadex.jpg", // <-- RUTA DE TU IMAGEN AQUÍ
+
         },
         {
           id: 2,
           title: "Capacitaciones",
           description: "Talleres para exportadores",
+          url: "/cadex1.webp", // <-- RUTA DE TU IMAGEN AQUÍ
         },
         {
           id: 3,
           title: "Ruedas de negocios",
           description: "Eventos de conexión internacional",
+          url: "/cadex1.webp", // <-- RUTA DE TU IMAGEN AQUÍ
         },
       ],
     },
@@ -106,11 +118,13 @@ export default function EventoPage() {
           id: 1,
           title: "Sede CADECOCRUZ",
           description: "Edificio corporativo moderno",
+          url : "/cadecocruz.jpg", // <-- RUTA DE TU IMAGEN AQUÍ
         },
         {
           id: 2,
           title: "Salón de reuniones",
           description: "Espacio para encuentros empresariales",
+          url: "/codecocruz1.jpg", // <-- RUTA DE TU IMAGEN AQUÍ
         },
       ],
     },
@@ -127,16 +141,19 @@ export default function EventoPage() {
           id: 1,
           title: "Vista aérea del parque",
           description: "Extensa zona industrial",
+          url: "/parqueindustrial1.jpeg", // <-- RUTA DE TU IMAGEN AQUÍ
         },
         {
           id: 2,
           title: "Naves industriales",
           description: "Infraestructura moderna para empresas",
+          url: "/parqueindustrial2.jpeg", // <-- RUTA DE TU IMAGEN AQUÍ
         },
         {
           id: 3,
           title: "Acceso principal",
           description: "Entrada al parque industrial",
+          url: "/parqueindustrial3.jpeg", // <-- RUTA DE TU IMAGEN AQUÍ
         },
       ],
     },
@@ -152,11 +169,13 @@ export default function EventoPage() {
           id: 1,
           title: "Planta de cerámica",
           description: "Fábrica de productos cerámicos",
+          url: "/ceramicanorte1.webp", // <-- RUTA DE TU IMAGEN AQUÍ
         },
         {
           id: 2,
           title: "Proceso de producción",
           description: "Tecnología moderna en fabricación",
+          url: "/ceramicanorte2.webp", // <-- RUTA DE TU IMAGEN AQUÍ
         },
       ],
     },
@@ -174,16 +193,19 @@ export default function EventoPage() {
           id: 1,
           title: "Plantaciones de caña",
           description: "Campos de cultivo extensos",
+          url: "/guabira2.jpg", // <-- RUTA DE TU IMAGEN AQUÍ
         },
         {
           id: 2,
           title: "Procesamiento de caña",
           description: "Tecnología en la producción de azúcar",
+          url: "/guabira3.jpg", // <-- RUTA DE TU IMAGEN AQUÍ
         },
         {
           id: 3,
           title: "Sede administrativa",
           description: "Centro de operaciones de Guabirá",
+          url: "/guabira1.jpg", // <-- RUTA DE TU IMAGEN AQUÍ
         },
       ],
     },
@@ -199,11 +221,13 @@ export default function EventoPage() {
           id: 1,
           title: "Planta procesadora",
           description: "Instalaciones modernas",
+          url: "/ingeniobelgica1.jpg", // <-- RUTA DE TU IMAGEN AQUÍ
         },
         {
           id: 2,
           title: "Proceso de refinación",
           description: "Tecnología avanzada en producción de azúcar",
+          url: "/ingeniobelgica.jpg", // <-- RUTA DE TU IMAGEN AQUÍ
         },
       ],
     },
@@ -237,6 +261,7 @@ export default function EventoPage() {
     id: number;
     title: string;
     description: string;
+    url: string; // <-- AGREGADO
     org: BusinessOrganization;
   }
 
@@ -250,10 +275,11 @@ export default function EventoPage() {
     images: BusinessImage[];
   }
 
-  interface BusinessImage {
+ interface BusinessImage {
     id: number;
     title: string;
     description: string;
+    url: string; // <-- AGREGADO
   }
 
   const openLightbox = (content: LightboxContent) => {
@@ -385,23 +411,32 @@ export default function EventoPage() {
       </nav>
 
       {/* HERO SECTION */}
-      <section className="relative h-screen w-full overflow-hidden">
-        <div className="absolute inset-0 bg-black/40 z-10"></div>
-        <div className="absolute inset-0 z-0">
-          <div className="bg-gray-200 border-2 border-dashed w-full h-full" />
-        </div>
-        <div className="container mx-auto px-4 h-full flex flex-col justify-center items-center relative z-20 text-center">
-          <h1 className="text-5xl md:text-7xl font-bold text-white mb-4 animate-fade-in">
-            Turismo de Negocios
-          </h1>
-          <h2 className="text-3xl md:text-5xl font-light text-white mb-8 animate-fade-in delay-200">
-            Santa Cruz de la Sierra
-          </h2>
-          <div className="animate-bounce mt-12">
-            <ChevronDown className="text-white h-10 w-10" />
-          </div>
-        </div>
-      </section>
+<section className="relative h-screen w-full overflow-hidden">
+  {/* Capa oscura para que el texto resalte (Overlay) */}
+  <div className="absolute inset-0 bg-black/40 z-10"></div>
+  
+  {/* Contenedor de la imagen de fondo */}
+  <div className="absolute inset-0 z-0">
+    <img 
+      src="/portadanegocio.webp" /* <-- REEMPLAZA ESTO CON LA RUTA DE TU IMAGEN */
+      alt="Turismo de Negocios en Santa Cruz" 
+      className="w-full h-full object-cover object-center" 
+    />
+  </div>
+
+  {/* Contenido principal (Texto y flecha) */}
+  <div className="container mx-auto px-4 h-full flex flex-col justify-center items-center relative z-20 text-center">
+    <h1 className="text-5xl md:text-7xl font-bold text-white mb-4 animate-fade-in">
+      Turismo de Negocios
+    </h1>
+    <h2 className="text-3xl md:text-5xl font-light text-white mb-8 animate-fade-in delay-200">
+      Santa Cruz de la Sierra
+    </h2>
+    <div className="animate-bounce mt-12">
+      <ChevronDown className="text-white h-10 w-10" />
+    </div>
+  </div>
+</section>
 
       {/* BUSINESS ORGANIZATIONS */}
       <div className="sticky top-16 z-40 bg-gradient-to-r from-green-600 to-emerald-700 py-3 px-4 shadow-lg">
@@ -501,7 +536,7 @@ export default function EventoPage() {
                   </div>
                 </div>
 
-                <div>
+               <div>
                   <div className="grid grid-cols-2 gap-4">
                     {org.images.map((image, imgIndex) => (
                       <div
@@ -509,8 +544,15 @@ export default function EventoPage() {
                         className="relative group overflow-hidden rounded-xl shadow-lg cursor-pointer aspect-square"
                         onClick={() => openLightbox({ ...image, org })}
                       >
-                        <div className="bg-gray-200 border-2 border-dashed w-full h-full" />
-                        <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-4">
+                        {/* SOLUCIÓN: Usar el componente Image */}
+                        <Image 
+                          src={image.url || "/placeholder-image.jpg"} // Usa un placeholder si la url no existe aún
+                          alt={image.title} 
+                          fill 
+                          className="object-cover transition-transform duration-500 group-hover:scale-110"
+                        />
+                        
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-4 z-10">
                           <div className="text-white translate-y-4 group-hover:translate-y-0 transition-transform">
                             <h3 className="font-bold">{image.title}</h3>
                             <p className="text-sm opacity-80">
@@ -679,8 +721,15 @@ export default function EventoPage() {
               </button>
             </div>
 
-            {/* Imagen o contenedor de imagen */}
-            <div className="bg-gray-200 border-2 border-dashed w-full h-[70vh] rounded-xl overflow-hidden mb-6" />
+            {/* SOLUCIÓN: Contenedor con Image */}
+            <div className="relative w-full h-[50vh] md:h-[70vh] rounded-xl overflow-hidden mb-6 bg-black/40">
+              <Image 
+                src={lightboxContent.url || "/placeholder-image.jpg"} 
+                alt={lightboxContent.title} 
+                fill 
+                className="object-contain"
+              />
+            </div>
 
             {/* Contenido del Lightbox */}
             <div className="bg-white rounded-lg p-6">

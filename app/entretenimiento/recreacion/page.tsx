@@ -41,7 +41,7 @@ export default function EventoPage() {
       description:
         "El Estadio Ramón Tahuichi Aguilera es el corazón del fútbol boliviano y sede de importantes eventos deportivos.",
       image:
-        "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?q=80&w=2070&auto=format&fit=crop",
+        "/estadio34.jpg",
     },
     {
       id: 2,
@@ -49,7 +49,7 @@ export default function EventoPage() {
       description:
         "Complejo deportivo que alberga múltiples disciplinas y es centro de formación de jóvenes talentos.",
       image:
-        "https://images.unsplash.com/photo-1518604666860-9ed391f76460?q=80&w=2070&auto=format&fit=crop",
+        "/estadio4.jpg",
     },
     {
       id: 3,
@@ -57,7 +57,7 @@ export default function EventoPage() {
       description:
         "Instalaciones de primer nivel para entrenamiento y competiciones menores.",
       image:
-        "https://images.unsplash.com/photo-1540747913346-19e32dc3e97e?q=80&w=2065&auto=format&fit=crop",
+        "/villaolimpica.webp",
     },
     {
       id: 4,
@@ -65,7 +65,7 @@ export default function EventoPage() {
       description:
         "Con capacidad para más de 38,000 espectadores, ofrece una experiencia única en cada partido.",
       image:
-        "https://images.unsplash.com/photo-1560272564-c83ee6d4f1e7?q=80&w=1974&auto=format&fit=crop",
+        "/villaolimpica3.webp",
     },
     {
       id: 5,
@@ -73,7 +73,7 @@ export default function EventoPage() {
       description:
         "Moderno circuito para competencias de atletismo y eventos deportivos.",
       image:
-        "https://images.unsplash.com/photo-1550348579-9598858bd9ad?q=80&w=1974&auto=format&fit=crop",
+        "/villaolimpica2.webp",
     },
     {
       id: 6,
@@ -81,7 +81,7 @@ export default function EventoPage() {
       description:
         "Moderno circuito para competencias de atletismo y eventos deportivos.",
       image:
-        "https://images.unsplash.com/photo-1550348579-9598858bd9ad?q=80&w=1974&auto=format&fit=crop",
+        "/villaolimpica1.webp",
     },
   ];
 
@@ -276,7 +276,7 @@ export default function EventoPage() {
         {/* Fondo con efecto 3D/parallax */}
         <div
           ref={heroRef}
-          className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1598880940080-ff9a29891b85?q=80&w=2070&auto=format&fit=crop')] bg-cover bg-center transform transition-transform duration-1000"
+          className="absolute inset-0 bg-[url('/estadio4.jpg')] bg-cover bg-center transform transition-transform duration-1000"
           style={{ transform: "translateY(0px)" }}
         ></div>
 
@@ -308,80 +308,97 @@ export default function EventoPage() {
       {/* ABOUT SECTION */}
       <section
         id="about-section"
-        className="py-20 bg-gradient-to-b from-white to-green-50"
+        className="py-20 bg-gradient-to-b from-white to-green-50 overflow-hidden"
       >
         <div className="container mx-auto px-4 max-w-6xl">
           <div className="flex flex-col md:flex-row gap-12 items-center">
-            <div className="md:w-1/2">
-              <div className="bg-white p-8 rounded-3xl shadow-2xl transform rotate-3 hover:rotate-0 transition-transform duration-500">
-                <h2 className="text-4xl font-bold text-green-800 mb-6">
+            
+            {/* Columna de Texto */}
+            <div className="w-full md:w-1/2">
+              <div className="bg-white p-6 md:p-8 rounded-3xl shadow-2xl transform md:rotate-3 hover:rotate-0 transition-transform duration-500">
+                <h2 className="text-3xl md:text-4xl font-bold text-green-800 mb-6">
                   Un Icono del Deporte Boliviano
                 </h2>
-                <p className="text-lg text-gray-700 mb-6">
+                <p className="text-base md:text-lg text-gray-700 mb-6">
                   El Estadio Ramón "Tahuichi" Aguilera es el principal escenario
                   deportivo de Santa Cruz de la Sierra. Inaugurado en 1938 y
                   renovado completamente en 1997, este estadio ha sido testigo
                   de momentos históricos del fútbol boliviano y ha formado a
                   generaciones de talentosos jugadores.
                 </p>
-                <p className="text-lg text-gray-700 mb-6">
+                <p className="text-base md:text-lg text-gray-700 mb-6">
                   Con una capacidad para 38,000 espectadores, el estadio forma
                   parte del complejo de la Villa Olímpica, que incluye pistas de
                   atletismo, canchas auxiliares, gimnasios y espacios para
                   múltiples disciplinas deportivas.
                 </p>
                 <div className="flex flex-wrap gap-4 mt-8">
-                  {features.map((feature, index) => (
+                  {features?.map((feature, index) => (
                     <div
                       key={index}
-                      className="bg-green-100 rounded-xl p-4 flex-1 min-w-[150px] text-center transform hover:-translate-y-2 transition-transform duration-300"
+                      className="bg-green-100 rounded-xl p-4 flex-1 min-w-[140px] text-center transform hover:-translate-y-2 transition-transform duration-300 hover:shadow-lg"
                     >
                       <div className="text-2xl mb-2">{feature.icon}</div>
-                      <h3 className="font-bold text-green-800">
+                      <h3 className="font-bold text-green-800 text-sm md:text-base">
                         {feature.title}
                       </h3>
-                      <p className="text-green-700">{feature.value}</p>
+                      <p className="text-green-700 text-sm">{feature.value}</p>
                     </div>
                   ))}
                 </div>
               </div>
             </div>
 
-            <div className="md:w-1/2 relative">
+            {/* Columna de Imágenes */}
+            <div className="w-full md:w-1/2 relative mt-8 md:mt-0">
               <div className="relative">
-                <div className="absolute -top-6 -left-6 w-full h-full border-4 border-green-400 rounded-2xl transform rotate-3 z-0"></div>
-                <div className="relative z-10 rounded-2xl overflow-hidden shadow-2xl">
+                {/* Cuadro verde decorativo de fondo */}
+                <div className="hidden md:block absolute -top-6 -left-6 w-full h-full border-4 border-green-400 rounded-2xl transform rotate-3 z-0 transition-transform duration-500 hover:rotate-6"></div>
+                
+                {/* IMAGEN PRINCIPAL */}
+                {/* Usamos aspect-[4/3] para que siempre mantenga la misma forma sin importar la pantalla */}
+                <div className="relative z-10 rounded-2xl overflow-hidden shadow-2xl w-full aspect-[4/3] bg-gray-200 group cursor-pointer">
                   <Image
-                    src="https://images.unsplash.com/photo-1598880940080-ff9a29891b85?q=80&w=2070&auto=format&fit=crop"
+                    src="/estadio.jpg"
                     alt="Estadio Tahuichi"
-                    width={600}
-                    height={400}
-                    className="w-full h-96 object-cover"
+                    fill
+                    sizes="(max-width: 768px) 100vw, 50vw"
+                    className="object-cover transition-transform duration-700 group-hover:scale-110"
                   />
+                  {/* Sombra interna al hacer hover */}
+                  <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-500 z-10" />
                 </div>
               </div>
 
-              <div className="mt-8 grid grid-cols-2 gap-4">
-                <div className="rounded-xl overflow-hidden shadow-lg">
+              {/* IMÁGENES SECUNDARIAS */}
+              {/* En móviles muy pequeños (sm) se pone en 1 columna, y en el resto en 2 columnas */}
+              <div className="mt-4 md:mt-8 grid grid-cols-2 gap-4">
+                
+                <div className="relative rounded-xl overflow-hidden shadow-lg w-full aspect-video bg-gray-200 group cursor-pointer">
                   <Image
-                    src="https://images.unsplash.com/photo-1598880940080-ff9a29891b85?q=80&w=2070&auto=format&fit=crop"
-                    alt="Vista del estadio"
-                    width={300}
-                    height={200}
-                    className="w-full h-48 object-cover"
+                    src="/estadioaereo.jpg"
+                    alt="Vista aerea del estadio"
+                    fill
+                    sizes="(max-width: 768px) 50vw, 25vw"
+                    className="object-cover transition-transform duration-700 group-hover:scale-110"
                   />
+                  <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-500 z-10" />
                 </div>
-                <div className="rounded-xl overflow-hidden shadow-lg">
+                
+                <div className="relative rounded-xl overflow-hidden shadow-lg w-full aspect-video bg-gray-200 group cursor-pointer">
                   <Image
-                    src="https://images.unsplash.com/photo-1598880940080-ff9a29891b85?q=80&w=2070&auto=format&fit=crop"
-                    alt="Canchas auxiliares"
-                    width={300}
-                    height={200}
-                    className="w-full h-48 object-cover"
+                    src="/estadio5.jpg"
+                    alt="Campo del estadio"
+                    fill
+                    sizes="(max-width: 768px) 50vw, 25vw"
+                    className="object-cover transition-transform duration-700 group-hover:scale-110"
                   />
+                  <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-500 z-10" />
                 </div>
+                
               </div>
             </div>
+            
           </div>
         </div>
       </section>
@@ -444,8 +461,8 @@ export default function EventoPage() {
               {/* Imagen principal */}
               <div className="relative z-10 rounded-2xl overflow-hidden shadow-2xl">
                 <Image
-                  src="https://images.unsplash.com/photo-1518604666860-9ed391f76460?q=80&w=2070&auto=format&fit=crop"
-                  alt="Villa Olímpica del Estadio Tahuichi"
+                  src="/villaolimpica.webp"
+                  alt="Villa Olímpica"
                   width={600}
                   height={400}
                   className="w-full h-96 object-cover"
@@ -456,25 +473,17 @@ export default function EventoPage() {
               <div className="mt-8 grid grid-cols-3 gap-4">
                 <div className="rounded-xl overflow-hidden shadow-lg">
                   <Image
-                    src="https://images.unsplash.com/photo-1517649763962-0c623066013b?q=80&w=2070&auto=format&fit=crop"
+                    src="/villaolimpica2.webp"
                     alt="Entrenamiento de atletismo"
                     width={200}
                     height={150}
                     className="w-full h-32 object-cover"
                   />
                 </div>
+                
                 <div className="rounded-xl overflow-hidden shadow-lg">
                   <Image
-                    src="https://images.unsplash.com/photo-1518609878373-06d740f60d8b?q=80&w=2070&auto=format&fit=crop"
-                    alt="Gimnasio de la Villa Olímpica"
-                    width={200}
-                    height={150}
-                    className="w-full h-32 object-cover"
-                  />
-                </div>
-                <div className="rounded-xl overflow-hidden shadow-lg">
-                  <Image
-                    src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?q=80&w=2070&auto=format&fit=crop"
+                    src="/villaolimpica4.webp"
                     alt="Clases de natación"
                     width={200}
                     height={150}

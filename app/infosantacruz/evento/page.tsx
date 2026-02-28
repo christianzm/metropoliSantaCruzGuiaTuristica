@@ -44,7 +44,7 @@ export default function EventoPage() {
       month: "Febrero",
       description:
         "El Carnaval cruceño es una de las fiestas más importantes y coloridas de Bolivia, llena de comparsas, carrozas y música tradicional.",
-      image: "/carnaval.jpg",
+      image: "/carnaval.png",
       location: "Centro de Santa Cruz",
       ubicacion: "https://maps.app.goo.gl/rmRbpXQFJ3WrV7Dv6",
     },
@@ -55,7 +55,7 @@ export default function EventoPage() {
       month: "Septiembre",
       description:
         "Celebración del aniversario de la fundación de Santa Cruz de la Sierra con desfiles cívicos, ferias y eventos culturales.",
-      image: "/aniversario.jpg",
+      image: "/aniversariodesantacruz.webp",
       location: "Plaza 24 de Septiembre",
       ubicacion: "https://maps.app.goo.gl/se2yB4sYsEWrR5iw7",
     },
@@ -66,7 +66,7 @@ export default function EventoPage() {
       month: "Septiembre",
       description:
         "Festejo de la llegada de la primavera con flores, música y actividades al aire libre en toda la ciudad.",
-      image: "/primavera.jpg",
+      image: "/diadelaprimavera.jpg",
       location: "Parques y plazas",
       ubicacion: "https://maps.app.goo.gl/vHKz8DZ53d9GPrNn6",
     },
@@ -77,7 +77,7 @@ export default function EventoPage() {
       month: "Septiembre",
       description:
         "La feria más grande del oriente boliviano, con exposiciones comerciales, ganaderas, industriales y culturales.",
-      image: "/expocruz.jpg",
+      image: "/feriaexpocruz.avif",
       location: "Fexpocruz",
       ubicacion: "https://maps.app.goo.gl/VVWAMQTUG12Ywugu8",
     },
@@ -88,7 +88,7 @@ export default function EventoPage() {
       month: "Septiembre",
       description:
         "Día dedicado a las tradiciones cruceñas, con música, danzas típicas, gastronomía y artesanías.",
-      image: "/tradicion.jpg",
+      image: "/diadelatradicion.webp",
       location: "Centro Histórico",
       ubicacion: "https://maps.app.goo.gl/JiAUsLPavoDMaG8A7",
     },
@@ -99,7 +99,7 @@ export default function EventoPage() {
       month: "Junio",
       description:
         "Celebración en el municipio de Porongo con fogatas, juegos tradicionales y gastronomía típica.",
-      image: "/san-juan.jpg",
+      image: "/porongo.jpg",
       location: "Municipio de Porongo",
       ubicacion: "https://maps.app.goo.gl/wSCbBiue6L7tyCxG9",
     },
@@ -110,7 +110,7 @@ export default function EventoPage() {
       month: "Diciembre",
       description:
         "Peregrinación a la Virgen de Cotoca, patrona del oriente boliviano, con miles de devotos.",
-      image: "/cotoca.jpg",
+      image: "/romeriaacotoca.webp",
       location: "Santuario de Cotoca",
       ubicacion: "https://maps.app.goo.gl/JpoPW1o9XBzZW3HcA",
     },
@@ -121,7 +121,7 @@ export default function EventoPage() {
       month: "Septiembre",
       description:
         "Feria donde se venden miniaturas para la buena suerte, tradición andina adaptada en Santa Cruz.",
-      image: "/alasitas.jpg",
+      image: "/alasita.png",
       location: "Cambódromo de Santa Cruz",
       ubicacion: "https://maps.app.goo.gl/3ti2YktKiuzCYbX27",
     },
@@ -301,38 +301,50 @@ export default function EventoPage() {
       {/* NAVBAR FIN */}
 
       {/* Hero Section */}
-      <section className="relative py-16 md:py-24 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-r from-green-500/10 to-green-700/10 z-0"></div>
-        <div className="absolute inset-0 bg-[url('/pattern.svg')] opacity-5 z-0"></div>
+<section className="relative py-16 md:py-44 overflow-hidden min-h-[60vh] flex items-center">
+  
+  {/* Imagen de fondo ocupando todo el section */}
+  <img 
+    src="/portadaeventos.jpg" /* Reemplaza con la ruta de tu imagen */
+    alt="Cultura Viva de Santa Cruz" 
+    className="absolute inset-0 w-full h-full object-cover z-0"
+  />
 
-        <div className="container mx-auto px-4 relative z-10">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="text-center max-w-3xl mx-auto"
-          >
-            <h1 className="text-4xl md:text-6xl font-bold text-green-800 mb-4">
-              Cultura Viva de{" "}
-              <span className="text-yellow-500">Santa Cruz</span>
-            </h1>
-            <p className="text-xl md:text-2xl text-gray-700 mb-8">
-              Descubre los eventos más vibrantes que pintan de color nuestra
-              región
-            </p>
-            <div className="flex justify-center">
-              <motion.div
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="bg-green-600 hover:bg-green-700 text-white font-bold py-3 px-8 rounded-full inline-flex items-center gap-2 transition duration-300"
-              >
-                <span>Explorar Tradiciones</span>
-                <ArrowRight size={18} />
-              </motion.div>
-            </div>
-          </motion.div>
-        </div>
-      </section>
+  {/* Capa de gradiente (Overlay) - Ajusté un poco la opacidad para mejorar la lectura del texto */}
+  <div className="absolute inset-0 bg-gradient-to-r from-white/80 to-green-100/60 z-0"></div>
+  
+  {/* Patrón superpuesto */}
+  <div className="absolute inset-0 bg-[url('/pattern.svg')] opacity-5 z-0"></div>
+
+  {/* Contenido principal */}
+  <div className="container mx-auto px-4 relative z-10">
+    <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.6 }}
+      className="text-center max-w-3xl mx-auto"
+    >
+      <h1 className="text-4xl md:text-6xl font-bold text-green-800 mb-4 drop-shadow-sm">
+        Cultura Viva de{" "}
+        <span className="text-yellow-500 drop-shadow-sm">Santa Cruz</span>
+      </h1>
+      <p className="text-xl md:text-2xl text-gray-800 font-medium mb-8">
+        Descubre los eventos más vibrantes que pintan de color nuestra
+        región
+      </p>
+      <div className="flex justify-center">
+        <motion.div
+          whileHover={{ scale: 1.05 }}
+          whileTap={{ scale: 0.95 }}
+          className="bg-green-600 hover:bg-green-700 text-white font-bold py-3 px-8 rounded-full inline-flex items-center gap-2 transition duration-300 cursor-pointer shadow-lg"
+        >
+          <span>Explorar Tradiciones</span>
+          <ArrowRight size={18} />
+        </motion.div>
+      </div>
+    </motion.div>
+  </div>
+</section>
 
       {/* Carrusel 3D de Eventos */}
       <section className="py-16 md:py-24 bg-gradient-to-b from-green-50 to-white">

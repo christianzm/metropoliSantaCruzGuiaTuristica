@@ -91,7 +91,7 @@ const GastronomiaCruceña = () => {
       descripcion:
         "Crema espesa de maní con fideos, papas, carne y verduras. Un plato reconfortante.",
       categoria: "platos",
-      imagen: "",
+      imagen: "/sopademani.jpg",
     },
     {
       id: 4,
@@ -99,7 +99,7 @@ const GastronomiaCruceña = () => {
       descripcion:
         "Puré de yuca con charque o queso, acompañado de plátano frito.",
       categoria: "desayunos",
-      imagen: "",
+      imagen: "/masacodeyuca.jpg",
     },
     {
       id: 5,
@@ -107,7 +107,7 @@ const GastronomiaCruceña = () => {
       descripcion:
         "Versión del masaco hecha con plátano verde, típico de Santa Cruz.",
       categoria: "desayunos",
-      imagen: "",
+      imagen: "/masacodeplatano.jpg",
     },
     {
       id: 7,
@@ -115,7 +115,7 @@ const GastronomiaCruceña = () => {
       descripcion:
         "Panecillo pequeño de almidón de yuca y queso. Infaltable en el cafecito de la tarde.",
       categoria: "horneados",
-      imagen: "",
+      imagen: "/Cunape.jpg",
       destacado: true,
     },
     {
@@ -124,7 +124,7 @@ const GastronomiaCruceña = () => {
       descripcion:
         "Masa de yuca mezclada con queso, asada en palitos. Versión cruceña de la chipa.",
       categoria: "horneados",
-      imagen: "",
+      imagen: "/sonso.jpg",
       destacado: true,
     },
     {
@@ -133,14 +133,14 @@ const GastronomiaCruceña = () => {
       descripcion:
         "Platillo de choclo con queso preparado en hojas de maíz, horneado o hervido.",
       categoria: "horneados",
-      imagen: "",
+      imagen: "/tamal.jpg",
     },
     {
       id: 11,
       nombre: "Arepa",
       descripcion: "Torta de maíz o arroz, horneada y servida con queso.",
       categoria: "desayunos",
-      imagen: "",
+      imagen: "/arepa.jpg",
     },
     {
       id: 13,
@@ -148,7 +148,7 @@ const GastronomiaCruceña = () => {
       descripcion:
         "Horneado de harina de arroz y yuca con queso en su interior, servido en hoja de plátano.",
       categoria: "horneados",
-      imagen: "",
+      imagen: "/empanadadearroz.jpg",
     },
     {
       id: 15,
@@ -156,7 +156,7 @@ const GastronomiaCruceña = () => {
       descripcion:
         "Bebida refrescante hecha con pulpa de tamarindo, azúcar y especias. Ideal para combatir el calor.",
       categoria: "bebidas",
-      imagen: "",
+      imagen: "/refrezcodetamarindo.webp",
       destacado: true,
     },
     {
@@ -165,7 +165,7 @@ const GastronomiaCruceña = () => {
       descripcion:
         "Bebida refrescante de durazno deshidratado, canela y azúcar. Aliado contra el calor cruceño.",
       categoria: "bebidas",
-      imagen: "",
+      imagen: "/mocochinchi.jpg",
       destacado: true,
     },
     {
@@ -174,7 +174,7 @@ const GastronomiaCruceña = () => {
       descripcion:
         "Bebida refrescante de harina, canela, clavo de olor y azúcar. Acompaña almuerzos y cenas.",
       categoria: "bebidas",
-      imagen: "",
+      imagen: "/somo.jpg",
     },
     {
       id: 18,
@@ -182,7 +182,7 @@ const GastronomiaCruceña = () => {
       descripcion:
         "Bebida espesa y nutritiva a base de maní molido. Tradición precolombina que perdura.",
       categoria: "bebidas",
-      imagen: "",
+      imagen: "/chichademani.webp",
     },
     {
       id: 19,
@@ -190,7 +190,7 @@ const GastronomiaCruceña = () => {
       descripcion:
         "Helado de paleta en diversos sabores, ideal para refrescarse en el clima cálido cruceño.",
       categoria: "bebidas",
-      imagen: "",
+      imagen: "/picole.png",
     },
     {
       id: 20,
@@ -198,7 +198,7 @@ const GastronomiaCruceña = () => {
       descripcion:
         "Empanada jugosa rellena de jigote de carne, pollo, huevo y papa. Aperitivo cruceño por excelencia.",
       categoria: "desayunos",
-      imagen: "",
+      imagen: "/salteña.webp",
       destacado: true,
     },
     {
@@ -207,7 +207,7 @@ const GastronomiaCruceña = () => {
       descripcion:
         "Bollos de harina de maíz rellenos de queso, cocidos al vapor.",
       categoria: "platos",
-      imagen: "",
+      imagen: "/pacumuto.jpeg",
     },
     {
       id: 21,
@@ -215,7 +215,7 @@ const GastronomiaCruceña = () => {
       descripcion:
         "Plato de chuleta de cerdo, cuero de cerdo, chorizo, papa, mote y queso. Tradición de Vallegrande.",
       categoria: "parrillas",
-      imagen: "",
+      imagen: "/asaditovallegrandino.jpeg",
       destacado: true,
     },
     {
@@ -224,7 +224,7 @@ const GastronomiaCruceña = () => {
       descripcion:
         "Pescado de río (sábalo, pacú) asado a la parrilla, con yuca, arroz y ensalada.",
       categoria: "parrillas",
-      imagen: "",
+      imagen: "/pescadoalaparrilla.png",
       destacado: true,
     },
     {
@@ -233,7 +233,7 @@ const GastronomiaCruceña = () => {
       descripcion:
         "Corte de carne asado a la parrilla con guarniciones tradicionales.",
       categoria: "parrillas",
-      imagen: "",
+      imagen: "/churrasco.png",
     },
     {
       id: 25,
@@ -241,7 +241,7 @@ const GastronomiaCruceña = () => {
       descripcion:
         "Carne de cerdo frita en su propia grasa, crujiente por fuera y jugosa por dentro.",
       categoria: "parrillas",
-      imagen: "",
+      imagen: "/chicharron.jpg",
     },
     {
       id: 26,
@@ -249,7 +249,7 @@ const GastronomiaCruceña = () => {
       descripcion:
         "Plato de cerdo con cuero, chuleta y chorizo acompañado de papa, mote y queso. Tradición quechua.",
       categoria: "parrillas",
-      imagen: "",
+      imagen: "/kjara.jpeg",
     },
   ];
 
@@ -399,7 +399,7 @@ const GastronomiaCruceña = () => {
         {/* Encabezado con imagen de fondo a ancho completo */}
         <div className="relative w-full h-96 overflow-hidden mb-12">
           <img
-            src="..\images\gastronomia.png"
+            src="..\comidaportada.jpg"
             alt="Gastronomía Cruceña"
             className="absolute inset-0 w-full h-full object-cover"
           />

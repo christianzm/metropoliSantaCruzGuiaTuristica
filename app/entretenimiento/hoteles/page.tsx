@@ -73,7 +73,7 @@ export default function EventoPage() {
       nombre: "Hotel Los Tajibos",
       categoria: "Lujo",
       estrellas: 5,
-      imagen: "/hotel-tajibos.jpg",
+      imagen: "/lostajibos.webp",
       descripcion:
         "Un oasis de lujo en el corazón de Santa Cruz. Con amplias habitaciones, piscinas espectaculares y servicio de primera clase. Disfrute de nuestra exclusiva zona spa y restaurantes gourmet.",
       servicios: [
@@ -88,7 +88,7 @@ export default function EventoPage() {
       ],
       ubicacion: "https://maps.app.goo.gl/AYdYE6QkvxvsWe4dA",
       precio: "$$$$",
-      rating: 4.8,
+      rating: 5.0,
       color: "from-emerald-900 to-emerald-700",
       style: "glass",
     },
@@ -96,8 +96,8 @@ export default function EventoPage() {
       id: 2,
       nombre: "Cortez Camino Real",
       categoria: "Negocios",
-      estrellas: 4,
-      imagen: "/hotel-cortez.jpg",
+      estrellas: 5,
+      imagen: "/caminoreal.webp",
       descripcion:
         "Perfecto para viajeros de negocios y eventos. Ubicado en el centro financiero con acceso a las principales áreas comerciales. Salas de conferencias equipadas con tecnología de última generación.",
       servicios: [
@@ -111,7 +111,7 @@ export default function EventoPage() {
       ],
       ubicacion: "https://maps.app.goo.gl/JG6AybcQYjYEx85T6",
       precio: "$$$",
-      rating: 4.5,
+      rating: 4.9,
       color: "from-blue-900 to-blue-700",
       style: "geometric",
     },
@@ -119,8 +119,8 @@ export default function EventoPage() {
       id: 3,
       nombre: "Hotel Yotau",
       categoria: "Familiar",
-      estrellas: 4,
-      imagen: "/hotel-yotau.jpg",
+      estrellas: 5,
+      imagen: "/hotelyotau.webp",
       descripcion:
         "Ambiente cálido y familiar con áreas de recreación para niños y espacios verdes. Ideal para vacaciones en familia. Contamos con actividades diarias para todas las edades.",
       servicios: [
@@ -132,7 +132,7 @@ export default function EventoPage() {
       ],
       ubicacion: "https://maps.app.goo.gl/WyzdsWFt2E4MwZdx7",
       precio: "$$",
-      rating: 4.3,
+      rating: 4.8,
       color: "from-amber-900 to-amber-700",
       style: "nature",
     },
@@ -140,8 +140,8 @@ export default function EventoPage() {
       id: 4,
       nombre: "Casa Blanca",
       categoria: "Boutique",
-      estrellas: 4,
-      imagen: "/hotel-casablanca.jpg",
+      estrellas: 5,
+      imagen: "/hotelcasablanca.webp",
       descripcion:
         "Encantador hotel boutique con diseño contemporáneo y atención personalizada. Cada habitación tiene un diseño único inspirado en la cultura local. Arte y decoración exclusiva en cada rincón.",
       servicios: [
@@ -153,16 +153,16 @@ export default function EventoPage() {
       ],
       ubicacion: "https://maps.app.goo.gl/mhZc4YDTrEPg9n6f7",
       precio: "$$$",
-      rating: 4.7,
+      rating: 4.8,
       color: "from-stone-900 to-stone-700",
       style: "minimal",
     },
     {
       id: 5,
       nombre: "Hotel Buganvilla",
-      categoria: "Ecológico",
-      estrellas: 3,
-      imagen: "/hotel-buganvilla.jpg",
+      categoria: "lujo",
+      estrellas: 5,
+      imagen: "/buganvillas.jpg",
       descripcion:
         "Conectado con la naturaleza. Un espacio tranquilo con jardines tropicales y prácticas sostenibles. Construido con materiales locales y respetando el ecosistema.",
       servicios: [
@@ -175,7 +175,7 @@ export default function EventoPage() {
       ],
       ubicacion: "https://maps.app.goo.gl/isSPR1kY8jVFp5H1A",
       precio: "$$",
-      rating: 4.4,
+      rating: 5.0,
       color: "from-lime-900 to-lime-700",
       style: "organic",
     },
@@ -184,7 +184,7 @@ export default function EventoPage() {
       nombre: "Eco Las Riveira",
       categoria: "Ecológico",
       estrellas: 4,
-      imagen: "/hotel-eco.jpg",
+      imagen: "/ecolarivera.webp",
       descripcion:
         "Combinación perfecta de lujo y sostenibilidad. Arquitectura bioclimática rodeada de vegetación exuberante. Energía solar y sistemas de recolección de agua pluvial.",
       servicios: [
@@ -195,7 +195,7 @@ export default function EventoPage() {
       ],
       ubicacion: "https://maps.app.goo.gl/FdUKC82ALiEb2d3Q6",
       precio: "$$$",
-      rating: 4.6,
+      rating: 4.7,
       color: "from-teal-900 to-teal-700",
       style: "water",
     },
@@ -204,7 +204,7 @@ export default function EventoPage() {
       nombre: "Hotel Radisson",
       categoria: "Lujo",
       estrellas: 5,
-      imagen: "/hotel-radisson.jpg",
+      imagen: "/radisson.webp",
       descripcion:
         "Elegancia internacional con estándares de servicio de primera. Ideal para eventos corporativos y bodas. Salones para eventos con capacidad hasta 500 personas.",
       servicios: [
@@ -218,7 +218,7 @@ export default function EventoPage() {
       ],
       ubicacion: "https://maps.app.goo.gl/3z1iNdvBtmM8WNxQA",
       precio: "$$$$",
-      rating: 4.9,
+      rating: 5.0,
       color: "from-indigo-900 to-indigo-700",
       style: "luxury",
     },
@@ -226,8 +226,8 @@ export default function EventoPage() {
       id: 8,
       nombre: "Terramia Resort",
       categoria: "Vacacional",
-      estrellas: 4,
-      imagen: "/hotel-terramia.jpg",
+      estrellas: 5,
+      imagen: "/terramia.avif",
       descripcion:
         "Resort todo incluido con actividades recreativas para todas las edades. Su lema: 'Tu paraíso personal'. Desde deportes acuáticos hasta espectáculos nocturnos.",
       servicios: [
@@ -240,16 +240,16 @@ export default function EventoPage() {
       ],
       ubicacion: "https://maps.app.goo.gl/rxV6bNjRhMKdGfrF8",
       precio: "$$$$",
-      rating: 4.7,
+      rating: 4.9,
       color: "from-rose-900 to-rose-700",
       style: "resort",
     },
     {
       id: 9,
       nombre: "Hotel Sun",
-      categoria: "Playa",
-      estrellas: 3,
-      imagen: "/hotel-sun.jpg",
+      categoria: "vacacional",
+      estrellas: 5,
+      imagen: "/sun.jpg",
       descripcion:
         "A pocos pasos de la playa. Ambiente descontracturado con acceso directo a las mejores playas de la región. Hamacas frente al mar y cócteles tropicales.",
       servicios: [
@@ -262,7 +262,7 @@ export default function EventoPage() {
       ],
       ubicacion: "https://maps.app.goo.gl/PYjRxQN839a7i8oX9",
       precio: "$$",
-      rating: 4.2,
+      rating: 4.9,
       color: "from-orange-900 to-orange-700",
       style: "beach",
     },
@@ -425,29 +425,44 @@ export default function EventoPage() {
       {/* NAVBAR FIN */}
 
       {/* HERO SECTION */}
-      <section className="relative py-24 md:py-32 overflow-hidden bg-gradient-to-r from-green-600 to-blue-600">
+      <section className="relative py-24 md:py-32 overflow-hidden bg-gray-900">
+        {/* Imagen de fondo */}
         <div className="absolute inset-0 z-0">
-          <div className="grid grid-cols-4 gap-8 opacity-20 transform rotate-12 -translate-y-24">
-            {[...Array(16)].map((_, i) => (
-              <div key={i} className="h-48 bg-white rounded-xl shadow-xl"></div>
-            ))}
+          <Image
+            src="/portadahotel.jpg" /* ⚠️ CAMBIA ESTO por el nombre de tu imagen en la carpeta public */
+            alt="Hoteles en Santa Cruz"
+            fill
+            className="object-cover"
+            priority /* priority ayuda a que esta imagen principal cargue más rápido */
+          />
+          
+          {/* Capa oscura (Overlay) para que el texto resalte */}
+          <div className="absolute inset-0 bg-black/60" />
+
+          {/* Tus cuadritos decorativos (opcional: los mantuve pero con menos opacidad) */}
+          <div className="absolute inset-0">
+            <div className="grid grid-cols-4 gap-8 opacity-10 transform rotate-12 -translate-y-24">
+              {[...Array(16)].map((_, i) => (
+                <div key={i} className="h-48 bg-white rounded-xl shadow-xl"></div>
+              ))}
+            </div>
           </div>
         </div>
 
+        {/* Contenido (Texto y Botón) */}
         <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-4xl mx-auto text-center">
-            <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">
+            <h1 className="text-4xl md:text-6xl font-bold text-white mb-6 drop-shadow-lg">
               Descubre los Mejores Hoteles de Santa Cruz
             </h1>
-            <p className="text-xl text-white/90 mb-8">
-              Experiencias únicas, servicio excepcional y comodidades de primera
-              categoría
+            <p className="text-xl text-white/90 mb-8 drop-shadow-md">
+              Experiencias únicas, servicio excepcional y comodidades de primera categoría
             </p>
 
             <div className="flex justify-center">
               <button
                 onClick={() => scrollToHotel(0)}
-                className="flex items-center bg-white text-green-700 px-6 py-3 rounded-full font-bold hover:bg-gray-100 transition-all shadow-lg hover:shadow-xl transform hover:-translate-y-1"
+                className="flex items-center bg-green-600 text-white px-6 py-3 rounded-full font-bold hover:bg-green-500 transition-all shadow-lg hover:shadow-xl transform hover:-translate-y-1"
               >
                 Explorar Hoteles <span className="ml-2 animate-bounce">↓</span>
               </button>
@@ -546,25 +561,32 @@ export default function EventoPage() {
                 } gap-12 items-center`}
               >
                 {/* Imagen */}
-                <div className="w-full lg:w-1/2">
-                  <div
-                    className="relative h-96 rounded-3xl overflow-hidden shadow-2xl cursor-pointer group"
-                    onClick={() => openHotelModal(hotel)}
-                  >
-                    <div className="bg-gradient-to-br from-gray-200 to-gray-300 border-2 border-dashed rounded-xl w-full h-full animate-pulse" />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-end p-6">
-                      <div className="text-white">
-                        <h3 className="text-2xl font-bold">{hotel.nombre}</h3>
-                        <p className="text-sm">
-                          Haz clic para ver más detalles
-                        </p>
-                      </div>
-                    </div>
-                    <div className="absolute top-4 right-4 bg-yellow-500 text-white px-3 py-1 rounded-full flex items-center text-sm font-bold">
-                      <Star size={16} className="mr-1" /> {hotel.rating}
-                    </div>
-                  </div>
-                </div>
+<div className="w-full lg:w-1/2">
+  <div
+    className="relative h-96 rounded-3xl overflow-hidden shadow-2xl cursor-pointer group"
+    onClick={() => openHotelModal(hotel)}
+  >
+    {/* AQUI ESTÁ LA CORRECCIÓN: Se reemplazó el div gris por la etiqueta Image */}
+    <Image
+      src={hotel.imagen}
+      alt={hotel.nombre}
+      fill
+      className="object-cover transition-transform duration-700 group-hover:scale-105"
+    />
+    
+    <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-end p-6">
+      <div className="text-white">
+        <h3 className="text-2xl font-bold">{hotel.nombre}</h3>
+        <p className="text-sm">
+          Haz clic para ver más detalles
+        </p>
+      </div>
+    </div>
+    <div className="absolute top-4 right-4 bg-yellow-500 text-white px-3 py-1 rounded-full flex items-center text-sm font-bold">
+      <Star size={16} className="mr-1" /> {hotel.rating}
+    </div>
+  </div>
+</div>
 
                 {/* Contenido */}
                 <div className="w-full lg:w-1/2">
@@ -652,18 +674,25 @@ export default function EventoPage() {
               boxShadow: "0 25px 50px -12px rgba(0, 0, 0, 0.5)",
             }}
           >
-            <div className="relative">
-              <div className="bg-gradient-to-br from-gray-200 to-gray-300 border-2 border-dashed w-full h-64 md:h-80" />
+            {/* ✅ PEGA ESTE NUEVO CÓDIGO ✅ */}
+            <div className="relative w-full h-64 md:h-80">
+              <Image
+                src={selectedHotel.imagen}
+                alt={selectedHotel.nombre}
+                fill
+                className="object-cover"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
 
               <button
                 onClick={closeHotelModal}
-                className="absolute top-4 right-4 bg-white rounded-full p-2 shadow-lg hover:bg-gray-100 transition-colors"
+                className="absolute top-4 right-4 bg-white rounded-full p-2 shadow-lg hover:bg-gray-100 transition-colors z-10"
               >
                 <X size={24} />
               </button>
 
-              <div className="absolute bottom-4 left-4">
-                <h2 className="text-white text-2xl md:text-3xl font-bold">
+              <div className="absolute bottom-4 left-4 z-10">
+                <h2 className="text-white text-2xl md:text-3xl font-bold drop-shadow-lg">
                   {selectedHotel.nombre}
                 </h2>
                 <div className="flex mt-1">
@@ -671,12 +700,13 @@ export default function EventoPage() {
                     <Star
                       key={i}
                       size={20}
-                      className="text-yellow-400 fill-yellow-400"
+                      className="text-yellow-400 fill-yellow-400 drop-shadow-md"
                     />
                   ))}
                 </div>
               </div>
             </div>
+            {/* ✅ HASTA AQUÍ ✅ */}
 
             <div className="p-6">
               <div className="flex flex-wrap gap-4 mb-6">

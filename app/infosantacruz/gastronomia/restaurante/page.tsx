@@ -52,7 +52,7 @@ export default function EventoPage() {
       tipo: "Restaurante",
       descripcion:
         "Ubicado a orillas del río Piraí, este restaurante ofrece una experiencia única con platos tradicionales cruceños en un ambiente natural y acogedor.",
-      imagenes: ["/rio-pirai-1.jpg", "/rio-pirai-2.jpg"],
+      imagenes: ["/cabañariopirai.jpg", "/lascabaña.webp"],
       calificacion: 4.8,
       horario: "Lunes a Domingo: 08:00 - 19:00",
       direccion: "Av. Roca Y Coronado 4to anillo",
@@ -65,9 +65,9 @@ export default function EventoPage() {
       descripcion:
         "El mercado más emblemático de Santa Cruz, con más de 100 años de historia. Ofrece una gran variedad de productos locales, artesanías y comida tradicional.",
       imagenes: [
-        "/mercado-7-calles-1.jpg",
-        "/mercado-7-calles-2.jpg",
-        "/mercado-7-calles-3.jpg",
+        "/mercado7callle.jpg",
+        "/mercado7callee.jpg",
+        "/mercado7calllle.png",
       ],
       calificacion: 4.5,
       horario: "Lunes a Sábado: 08:00 - 19:00",
@@ -80,7 +80,7 @@ export default function EventoPage() {
       tipo: "Restaurante",
       descripcion:
         "Famoso por su deliciosa carne asada y ambiente tradicional. Un lugar ideal para degustar la auténtica gastronomía cruceña.",
-      imagenes: ["/casa-camba-1.jpg"],
+      imagenes: ["/lacasadelcamba.jpg"],
       calificacion: 4.7,
       horario: "Lunes a Domingo: 11:00 - 23:00",
       direccion: "Av. Cristobal de Mendoza 1365, Santa Cruz de la Sierra",
@@ -92,7 +92,7 @@ export default function EventoPage() {
       tipo: "Restaurante",
       descripcion:
         "Restaurante de alta cocina con fusión de sabores locales e internacionales. Destaca por su ambiente elegante y atención personalizada.",
-      imagenes: ["/aljibe-1.jpg", "/aljibe-2.jpg"],
+      imagenes: ["/elaljibe.webp", "/elaljibee.webp"],
       calificacion: 4.9,
       horario: "Lunes a Domingo: 11:00 - 22:00",
       direccion: "Calle Potosi, Santa Cruz de la Sierra",
@@ -104,7 +104,7 @@ export default function EventoPage() {
       tipo: "Restaurante",
       descripcion:
         "Especializado en comida típica cruceña como el majao, locro y sonso. Ambiente familiar y acogedor con decoración tradicional.",
-      imagenes: ["/pascana-1.jpg", "/pascana-2.jpg"],
+      imagenes: ["/lapascana.webp", "/lapascanaa.webp"],
       calificacion: 4.6,
       horario: "Todos los días: 11:00 - 00:00",
       direccion: "Calle Rene Moreno, Santa Cruz de la Sierra",
@@ -116,7 +116,7 @@ export default function EventoPage() {
       tipo: "Mercado",
       descripcion:
         "Conocido por sus frutas tropicales y productos frescos. Un lugar colorido donde se puede experimentar la vida cotidiana cruceña.",
-      imagenes: ["/mercado-bosque-1.jpg"],
+      imagenes: ["/mercadoelbosque.webp"],
       calificacion: 4.3,
       horario: "Lunes a Domingo: 07:00 - 17:00",
       direccion: "5 anillo doble via la guardia, Santa Cruz de la Sierra",
@@ -128,7 +128,7 @@ export default function EventoPage() {
       tipo: "Mercado",
       descripcion:
         "El mercado más moderno de la ciudad con una amplia variedad de productos, desde alimentos hasta artesanías y ropa.",
-      imagenes: ["/mercado-nuevo-1.jpg", "/mercado-nuevo-2.jpg"],
+      imagenes: ["/mercadonuevo.jpg", "/mercadonuevoo.webp"],
       calificacion: 4.4,
       horario: "Lunes a Domingo: 7:00 - 20:00",
       direccion: "calle sucre y cochabamba, Santa Cruz de la Sierra",
@@ -141,9 +141,9 @@ export default function EventoPage() {
       descripcion:
         "Ubicado en un hermoso jardín de orquídeas, ofrece una experiencia gastronómica única con platos internacionales y ambiente romántico.",
       imagenes: [
-        "/orquideario-1.jpg",
-        "/orquideario-2.jpg",
-        "/orquideario-3.jpg",
+        "/elorquidario.webp",
+        "/elorquidarioo.webp",
+        "/elorquidariooo.webp",
       ],
       calificacion: 4.9,
       horario: "Martes a Domingo: 09:00 - 21:00",
@@ -309,11 +309,18 @@ export default function EventoPage() {
 
       {/* HERO SECTION */}
       <section className="relative h-screen flex items-center justify-center overflow-hidden">
-        <div className="absolute inset-0 bg-black/60 z-10"></div>
-        <div className="absolute inset-0">
-          <div className="bg-[url('/santa-cruz-hero.jpg')] bg-cover bg-center w-full h-full animate-pan"></div>
-        </div>
+        
+        {/* 1. LA IMAGEN DE FONDO (Ocupa todo el section) */}
+        <img 
+          src="/portadarestaurante.avif" 
+          alt="Fondo de Santa Cruz" 
+          className="absolute inset-0 w-full h-full object-cover z-0 animate-pan"
+        />
 
+        {/* 2. EL OVERLAY OSCURO (Va encima de la imagen para que el texto resalte) */}
+        <div className="absolute inset-0 bg-black/60 z-10"></div>
+
+        {/* 3. EL CONTENIDO PRINCIPAL (Textos y botón) */}
         <div className="relative z-20 text-center px-4 max-w-4xl">
           <h1 className="text-5xl md:text-7xl font-bold text-white mb-4 animate-fadeIn">
             Descubre Santa Cruz
@@ -336,9 +343,11 @@ export default function EventoPage() {
           </div>
         </div>
 
+        {/* 4. EL ICONO INFERIOR */}
         <div className="absolute bottom-0 left-0 right-0 flex justify-center pb-6 z-20 animate-bounce-slow">
           <ChevronDown size={30} className="text-white" />
         </div>
+        
       </section>
 
       {/* INTRO SECTION */}

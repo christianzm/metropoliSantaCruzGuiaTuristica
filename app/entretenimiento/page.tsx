@@ -21,7 +21,7 @@ const comerciales = [
     nombre: "Ventura Mall",
     descripcion:
       "El centro comercial más grande de Santa Cruz, con una variedad de tiendas, restaurantes y entretenimiento. Disfruta de su arquitectura moderna y espacios abiertos.",
-    imagenes: ["/ventura1.jpg", "/ventura2.jpg", "/ventura3.jpg"],
+    imagenes: ["/venturamallllll.jpg", "/ventural111.jpg", "/venturainterior.jpg"],
     ubicacion: "Av. San Martin esquina, Santa Cruz de la Sierra",
     enlaceUbicacion: "https://maps.app.goo.gl/hRzJhfAjmhTs4sKb9",
     horarios: "Lunes a Domingo: 10:00 am - 22:00 pm",
@@ -46,7 +46,7 @@ const comerciales = [
     nombre: "Las Brisas",
     descripcion:
       "Un centro comercial con un diseño moderno y una amplia oferta de tiendas y servicios. Conocido por su ambiente relajado y espacios verdes.",
-    imagenes: ["/brisas1.jpg", "/brisas2.jpg"],
+    imagenes: ["/lasbrisa.jpg", "/las brisassssmal.jpg"],
     ubicacion: "Av. Cuarto Anillo, Santa Cruz de la Sierra, Bolivia",
     enlaceUbicacion: "https://maps.app.goo.gl/H7vGsd8wgRRxxvP16",
     horarios: "Lunes a Domingo: 10:00 am - 22:00 pm",
@@ -73,7 +73,7 @@ const comerciales = [
     nombre: "Mega Center",
     descripcion:
       "Conocido por su ambiente familiar y diversidad de tiendas y restaurantes. Un lugar ideal para pasar el día con toda la familia.",
-    imagenes: ["/mega1.jpg", "/mega2.jpg"],
+    imagenes: ["/cinecenter.jpg", "/cinecenter11.jpg"],
     ubicacion: "Av. El Trompillo y, Santa Cruz de la Sierra",
     enlaceUbicacion: "https://maps.app.goo.gl/fKLVr4joKpj6MDTV6",
     horarios: "Lunes a Domingo: 09:00 am - 22:00 pm",
@@ -93,7 +93,7 @@ const comerciales = [
     nombre: "Patio Design",
     descripcion:
       "Un espacio dedicado al diseño y la decoración, con tiendas exclusivas de mobiliario y accesorios para el hogar.",
-    imagenes: ["/patio1.jpg", "/patio2.jpg"],
+    imagenes: ["/patiodesign.jpg", "/designpatio.jpg"],
     ubicacion: "Av. Noel Kempff Mercado y Av. Busch Santa Cruz de la Sierra",
     enlaceUbicacion: "https://maps.app.goo.gl/7cxnA6vcrM9Q3c4d7",
     horarios: "Lunes a Domingo: 09:00 am - 22:00 pm",
@@ -113,7 +113,7 @@ const comerciales = [
     nombre: "Mega Center Avenida Brasil",
     descripcion:
       "Ubicado en una de las avenidas más importantes, ofrece una gran variedad de opciones comerciales y gastronómicas.",
-    imagenes: ["/mega-brasil1.jpg", "/mega-brasil2.jpg"],
+    imagenes: ["/megacenter.jpg", "/megacenter1.jpg"],
     ubicacion: "CECILIO CHÁVEZ 2195, Santa Cruz de la Sierra",
     enlaceUbicacion: "https://maps.app.goo.gl/h9En5dz7Pfy81Epn9",
     horarios: "Lunes a Domingo: 08:00 am - 23:00 pm",
@@ -137,7 +137,7 @@ const comerciales = [
     nombre: "Casco Viejo",
     descripcion:
       "Un centro comercial con estilo colonial y una oferta gastronómica única. Ideal para disfrutar de la arquitectura tradicional cruceña.",
-    imagenes: ["/casco1.jpg", "/casco2.jpg"],
+    imagenes: ["/cascoo.jpg", "/cascoooviejooo.jpg","/cascoviejo.jpg"],
     ubicacion: "Calle 21 de Mayo, Santa Cruz de la Sierra",
     enlaceUbicacion: "https://maps.app.goo.gl/mx7EmaoujBMtwdGJ7",
     horarios: "Lunes a Sabado: 08:00 am - 20:00 pm",
@@ -156,7 +156,7 @@ const comerciales = [
     nombre: "Shopping Bolívar",
     descripcion:
       "Ubicado en el corazón de la ciudad, con tiendas de moda y restaurantes. Un punto de encuentro para los cruceños.",
-    imagenes: ["/bolivar1.jpg", "/bolivar2.jpg"],
+    imagenes: ["/shoopingbolivar.webp", "/shoopingboolivar.webp"],
     ubicacion: "CalleBolivar y, Santa Cruz de la Sierra",
     enlaceUbicacion: "https://maps.app.goo.gl/SfEM2mzchugd3JrEA",
     horarios:
@@ -363,38 +363,50 @@ export default function EventoPage() {
 
       {/* PORTADA HERO */}
       <section className="relative h-screen overflow-hidden">
-        {/* Carrusel */}
-        <div className="absolute inset-0">
-          {/* Imagen 1 */}
-          <div
-            className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${
-              activeTab === 0 ? "opacity-100" : "opacity-0"
-            }`}
-          >
-            <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black opacity-80"></div>
-            <div className="w-full h-full bg-gray-300 animate-pulse" />
-          </div>
-
-          {/* Imagen 2 */}
-          <div
-            className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${
-              activeTab === 1 ? "opacity-100" : "opacity-0"
-            }`}
-          >
-            <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black opacity-80"></div>
-            <div className="w-full h-full bg-gray-400 animate-pulse" />
-          </div>
-
-          {/* Imagen 3 */}
-          <div
-            className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${
-              activeTab === 2 ? "opacity-100" : "opacity-0"
-            }`}
-          >
-            <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black opacity-80"></div>
-            <div className="w-full h-full bg-gray-500 animate-pulse" />
-          </div>
+      {/* Carrusel */}
+      <div className="absolute inset-0">
+        {/* Imagen 1 */}
+        <div
+          className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${
+            activeTab === 0 ? "opacity-100" : "opacity-0"
+          }`}
+        >
+          <img 
+            src="/comerciales.avif" 
+            alt="Comercial 1" 
+            className="w-full h-full object-cover" 
+          />
+          <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black opacity-80"></div>
         </div>
+
+        {/* Imagen 2 */}
+        <div
+          className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${
+            activeTab === 1 ? "opacity-100" : "opacity-0"
+          }`}
+        >
+          <img 
+            src="/Ventura-Mall.jpg" /* Cambia por tu segunda imagen, ej: /comercial2.jpg */
+            alt="Comercial 2" 
+            className="w-full h-full object-cover" 
+          />
+          <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black opacity-80"></div>
+        </div>
+
+        {/* Imagen 3 */}
+        <div
+          className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${
+            activeTab === 2 ? "opacity-100" : "opacity-0"
+          }`}
+        >
+          <img 
+            src="/comerciial2.jpg" /* Cambia por tu tercera imagen, ej: /comercial3.jpg */
+            alt="Comercial 3" 
+            className="w-full h-full object-cover" 
+          />
+          <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black opacity-80"></div>
+        </div>
+      </div>
 
         {/* Contenido superpuesto */}
         <div className="relative z-10 h-full flex flex-col justify-center items-center text-center px-4">
@@ -477,25 +489,37 @@ export default function EventoPage() {
                 } flex flex-col`}
               >
                 {/* Imágenes */}
-                <div className="md:w-1/2 relative">
-                  <div className="grid grid-cols-2 gap-1 h-full">
-                    {comercial.imagenes.map((img, imgIndex) => (
-                      <div
-                        key={imgIndex}
-                        className="relative aspect-square cursor-pointer group"
-                        onClick={() => openImageModal(index, imgIndex)}
-                      >
-                        <div className="absolute inset-0 bg-gray-200 border-2 border-dashed rounded-xl w-full h-full animate-pulse" />
-                        <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-30 transition-all flex items-center justify-center">
-                          <Maximize
-                            className="text-white opacity-0 group-hover:opacity-100 transition-opacity"
-                            size={32}
-                          />
-                        </div>
-                      </div>
-                    ))}
-                  </div>
-                </div>
+                {/* Imágenes */}
+<div className="md:w-1/2 relative">
+  <div className="grid grid-cols-2 gap-1 h-full">
+    {comercial.imagenes.map((img, imgIndex) => (
+      <div
+        key={imgIndex}
+        className="relative aspect-square cursor-pointer group overflow-hidden"
+        onClick={() => openImageModal(index, imgIndex)}
+      >
+        {/* Fondo de carga mientras aparece la imagen */}
+        <div className="absolute inset-0 bg-gray-200 animate-pulse" />
+        
+        {/* ESTA ES LA ETIQUETA QUE DEBES AGREGAR */}
+        <Image
+          src={img}
+          alt={comercial.nombre}
+          fill
+          className="object-cover transition-transform duration-500 group-hover:scale-110"
+          sizes="(max-width: 768px) 50vw, 33vw"
+        />
+
+        <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-30 transition-all flex items-center justify-center z-10">
+          <Maximize
+            className="text-white opacity-0 group-hover:opacity-100 transition-opacity"
+            size={32}
+          />
+        </div>
+      </div>
+    ))}
+  </div>
+</div>
 
                 {/* Información */}
                 <div className="md:w-1/2 p-6 md:p-10">
@@ -585,7 +609,7 @@ export default function EventoPage() {
             {/* Imagen de entretenimiento */}
             <div className="relative">
               <img
-                src="/img/entretenimiento.jpg"
+                src="/entretenimiento.jpg"
                 alt="Turismo de Entretenimiento"
                 className="rounded-3xl shadow-2xl w-full object-cover"
               />
@@ -643,19 +667,19 @@ export default function EventoPage() {
         {
           title: "Explora, Vive y Descansa en la Naturaleza Urbana",
           desc: "Tu guía para hoteles, recreación y relax.",
-          image: "/imagenes/hoteles.jpg",
+          image: "/hotelesportada.avif",
           link: "/entretenimiento/hoteles",
         },
         {
           title: "Explora Zonas para Respirar y Moverte",
           desc: "Villas, parques y estadios esperándote.",
-          image: "/imagenes/recreacion.jpg",
+          image: "/estadio4.jpg",
           link: "/entretenimiento/recreacion",
         },
         {
           title: "Explora el Ritmo de la Ciudad",
           desc: "Vive la música, el arte y el entretenimiento de Santa Cruz.",
-          image: "/imagenes/otros.jpg",
+          image: "/casagrande.jpg",
           link: "/entretenimiento/otros",
         },
       ].map((card, index) => (
@@ -806,27 +830,37 @@ export default function EventoPage() {
       </footer>
 
       {/* MODAL PARA IMAGEN AMPLIADA */}
+      {/* MODAL PARA IMAGEN AMPLIADA */}
       {expandedImage !== null && (
         <div
           className="fixed inset-0 bg-black bg-opacity-90 z-50 flex items-center justify-center animate-fadeIn"
           onClick={closeImageModal}
         >
+          {/* Botón Cerrar */}
           <button
-            className="absolute top-4 right-4 text-white bg-black bg-opacity-50 rounded-full p-2 hover:bg-opacity-100 transition"
+            className="absolute top-4 right-4 text-white bg-black bg-opacity-50 rounded-full p-2 hover:bg-opacity-100 transition z-50"
             onClick={closeImageModal}
           >
             <X size={32} />
           </button>
 
+          {/* Contenedor de la Imagen */}
           <div
-            className="relative max-w-6xl w-full h-[90vh] mx-4"
+            className="relative max-w-6xl w-full h-[90vh] mx-4 flex items-center justify-center"
             onClick={(e) => e.stopPropagation()}
           >
-            <div className="w-full h-full bg-gray-300 animate-pulse" />
+            <Image
+              src={comerciales[expandedImage.comercialIndex].imagenes[expandedImage.imageIndex]}
+              alt={`Vista ampliada de ${comerciales[expandedImage.comercialIndex].nombre}`}
+              fill
+              className="object-contain"
+              priority // Esto asegura que la imagen cargue rápido apenas se abra el modal
+            />
           </div>
 
+          {/* Botón Anterior */}
           <button
-            className="absolute left-4 top-1/2 transform -translate-y-1/2 text-white bg-black bg-opacity-50 rounded-full p-3 hover:bg-opacity-100 transition"
+            className="absolute left-4 top-1/2 transform -translate-y-1/2 text-white bg-black bg-opacity-50 rounded-full p-3 hover:bg-opacity-100 transition z-50"
             onClick={(e) => {
               e.stopPropagation();
               const prevIndex =
@@ -840,8 +874,9 @@ export default function EventoPage() {
             <ChevronLeft size={32} />
           </button>
 
+          {/* Botón Siguiente */}
           <button
-            className="absolute right-4 top-1/2 transform -translate-y-1/2 text-white bg-black bg-opacity-50 rounded-full p-3 hover:bg-opacity-100 transition"
+            className="absolute right-4 top-1/2 transform -translate-y-1/2 text-white bg-black bg-opacity-50 rounded-full p-3 hover:bg-opacity-100 transition z-50"
             onClick={(e) => {
               e.stopPropagation();
               const nextIndex =

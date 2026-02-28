@@ -48,7 +48,7 @@ export default function InfoSantaCruzPage() {
       icon: <Star className="w-6 h-6 text-yellow-500" />,
       description:
         "Corazón de la ciudad desde 1590, donde Santa Cruz encontró su nueva raíz. Antiguamente llamada Plaza Real, su transformación se consolidó con la estatua de Ignacio Warnes en 1922 y una remodelación integral en 2004. Rodeada de arquitectura colonial, palmeras reales, cafés, y con presencia constante de músicos, artesanos y visitantes, es un lugar ideal para sentir la esencia histórica y vibrante de Santa Cruz.",
-      image: "/images/vistaaerea.png",
+      image: "/plaza24.jpg",
       location: "Centro Histórico",
       mapLink: "https://maps.app.goo.gl/ywXpHcEGgxXrW7Es6",
       recommendation: "Perfecto para paseos matutinos",
@@ -69,8 +69,7 @@ export default function InfoSantaCruzPage() {
       icon: <Store className="w-7 h-7 text-yellow-500" />,
       description:
         "Ubicado en la Plaza 24 de Septiembre, este club histórico es un símbolo de tradición y encuentro social en Santa Cruz.",
-      image:
-        "https://upload.wikimedia.org/wikipedia/commons/2/23/Club24SantaCruz.jpg", // ✅ Aquí la imagen real
+      image:"/club-social.jpg", // ✅ Aquí la imagen real
       location:
         "Calle Libertad esquina Ayacucho Plaza 24 de Septiembre esquina Suroeste",
       mapLink: "https://maps.app.goo.gl/mJ7TpeacBjr934ta6",
@@ -83,7 +82,7 @@ export default function InfoSantaCruzPage() {
       description:
         "Ubicado en la primera manzana fundacional de Santa Cruz, este centro cultural acoge exposiciones contemporáneas de artistas nacionales e internacionales. Fusionando estilos como realismo, surrealismo, arte abstracto y minimalismo, Manzana Uno ofrece una experiencia inmersiva e inclusiva para todo público. Ideal para una tarde de inspiración, cultura y reflexión en pleno centro histórico.",
       image:
-        "https://upload.wikimedia.org/wikipedia/commons/2/23/Club24SantaCruz.jpg", // ✅ Aquí la imagen real
+        "/paseo-artesanal-la-recova.jpg", // ✅ Aquí la imagen real
       location: "Av. libertad entre calle Florida y calle junin",
       mapLink: "https://maps.app.goo.gl/fov9q9b39AeVVL89A",
       recommendation: "Un Paseo Mágico por el Corazón Artesanal de Santa Cruz",
@@ -95,7 +94,7 @@ export default function InfoSantaCruzPage() {
       description:
         "Ubicado en la primera manzana fundacional de Santa Cruz, este centro cultural acoge exposiciones contemporáneas de artistas nacionales e internacionales. Fusionando estilos como realismo, surrealismo, arte abstracto y minimalismo, Manzana Uno ofrece una experiencia inmersiva e inclusiva para todo público. Ideal para una tarde de inspiración, cultura y reflexión en pleno centro histórico.",
       image:
-        "https://upload.wikimedia.org/wikipedia/commons/2/23/Club24SantaCruz.jpg", // ✅ Aquí la imagen real
+        "/casadelacultura.png", // ✅ Aquí la imagen real
       location: "Libertad 65, Santa Cruz de la Sierra",
       mapLink: "https://maps.app.goo.gl/pztEBxMntuvtn29T6",
       recommendation: "Una Velada Inspiradora en el Alma Cultural de la Ciudad",
@@ -106,8 +105,7 @@ export default function InfoSantaCruzPage() {
       icon: <Church className="w-7 h-7 text-yellow-500" />,
       description:
         "Ubicado en la primera manzana fundacional de Santa Cruz, este centro cultural acoge exposiciones contemporáneas de artistas nacionales e internacionales. Fusionando estilos como realismo, surrealismo, arte abstracto y minimalismo, Manzana Uno ofrece una experiencia inmersiva e inclusiva para todo público. Ideal para una tarde de inspiración, cultura y reflexión en pleno centro histórico.",
-      image:
-        "https://upload.wikimedia.org/wikipedia/commons/2/23/Club24SantaCruz.jpg", // ✅ Aquí la imagen real
+      image:"/cristo.jpeg", // ✅ Aquí la imagen real
       location: "Calle Independencia esq. Ayacucho",
       mapLink: "https://maps.app.goo.gl/4VE4g7Kk746eWrqZ7",
       recommendation: "Visita ideal en horario vespertino",
@@ -119,7 +117,7 @@ export default function InfoSantaCruzPage() {
       description:
         "Ubicado en la primera manzana fundacional de Santa Cruz, este centro cultural acoge exposiciones contemporáneas de artistas nacionales e internacionales. Fusionando estilos como realismo, surrealismo, arte abstracto y minimalismo, Manzana Uno ofrece una experiencia inmersiva e inclusiva para todo público. Ideal para una tarde de inspiración, cultura y reflexión en pleno centro histórico.",
       image:
-        "https://upload.wikimedia.org/wikipedia/commons/2/23/Club24SantaCruz.jpg", // ✅ Aquí la imagen real
+        "/altarpapal.jpg", // ✅ Aquí la imagen real
       location: "Av. Cristobal de mendoza y Av. Monseñor rivero",
       mapLink: "https://maps.app.goo.gl/ZjsHZhkRTy9cj3ad6",
       recommendation:
@@ -131,7 +129,7 @@ export default function InfoSantaCruzPage() {
       description:
         "Ubicado en la primera manzana fundacional de Santa Cruz, este centro cultural acoge exposiciones contemporáneas de artistas nacionales e internacionales. Fusionando estilos como realismo, surrealismo, arte abstracto y minimalismo, Manzana Uno ofrece una experiencia inmersiva e inclusiva para todo público. Ideal para una tarde de inspiración, cultura y reflexión en pleno centro histórico.",
       image:
-        "https://upload.wikimedia.org/wikipedia/commons/2/23/Club24SantaCruz.jpg", // ✅ Aquí la imagen real
+        "/Cambódromo-Santa-Cruz.jpg", // ✅ Aquí la imagen real
       location: "Av. mutualista 4to anillo",
       mapLink: "https://maps.app.goo.gl/xUvU3ficoY78Axj66",
       recommendation: "El Escenario Urbano para un Atardecer Lleno de Energía",
@@ -285,7 +283,7 @@ export default function InfoSantaCruzPage() {
         <div className="relative w-full h-[500px] overflow-hidden">
           {/* Imagen de fondo */}
           <img
-            src="/images/vistaaerea.png"
+            src="/santacruz_dia.jpg"
             alt="Santa Cruz de la Sierra"
             className="absolute inset-0 w-full h-full object-cover"
           />

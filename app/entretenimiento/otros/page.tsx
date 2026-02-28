@@ -34,7 +34,7 @@ const lugares = [
     horario: "Lunes a Miercoles y Domingo: 12:00 - 00:00  Jueves a sabado : 12:00 - 01:00",
     ubicacion: "https://maps.app.goo.gl/9EcEG8Q3RJcJBY8E9",
     imagen:
-      "https://media.istockphoto.com/id/2166773378/es/foto/autumn-on-lake-gosau-in-salzkammergut-austria.jpg?b=1&s=612x612&w=0&k=20&c=5CjOhXBC0qPkxRzeCD_JWlBcdSCHt2_cqyxJ-Y_0zk4=",
+      "/hardrock.webp",
     color: "#e63946",
   },
   {
@@ -46,7 +46,7 @@ const lugares = [
     horario: "Viernes a Domingo: 11:00 - 23:00",
     ubicacion: "https://maps.app.goo.gl/c54mjGhmL6kyKeum9",
     imagen:
-      "https://images.unsplash.com/photo-1601924994987-69e26d50dc26?q=80&w=1000",
+      "/casagrande.jpg",
     color: "#1d3557",
   },
   {
@@ -58,7 +58,7 @@ const lugares = [
     horario: "Viernes y Sábado: 20:00 - 23:00",
     ubicacion: "https://maps.app.goo.gl/5mCU4dAr59nweX1s9",
     imagen:
-      "https://images.unsplash.com/photo-1543429776-2782fc586c6a?q=80&w=1000",
+      "/chaplinshow.webp",
     color: "#e9c46a",
   },
   {
@@ -70,7 +70,7 @@ const lugares = [
     horario: "Lunes a Domingo: 10:00 - 01:00",
     ubicacion: "https://maps.app.goo.gl/tFsv8NufEvWbqSXb7",
     imagen:
-      "https://images.unsplash.com/photo-1511795409834-ef04bbd61622?q=80&w=1000",
+      "/lapascana111.webp",
     color: "#2a9d8f",
   },
   {
@@ -82,7 +82,7 @@ const lugares = [
     horario: "Vierne a Sábado: 20:00 - 04:00",
     ubicacion: "https://maps.app.goo.gl/k8zqQh4ypoCQX4848",
     imagen:
-      "https://images.unsplash.com/photo-1566737236500-c8ac43014a67?q=80&w=1000",
+      "/arena26.webp",
     color: "#9b5de5",
   },
   {
@@ -94,7 +94,7 @@ const lugares = [
     horario: "Sábados: 21:00 - 23:30",
     ubicacion: "https://maps.app.goo.gl/4X5Kv5XjkybXJTXJA",
     imagen:
-      "https://images.unsplash.com/photo-1492684223066-81342ee5ff30?q=80&w=1000",
+      "/showdemier.webp",
     color: "#f15bb5",
   },
 ];
@@ -285,7 +285,7 @@ export default function LugaresTuristicos() {
 
       {/* HERO SECTION */}
       <section className="relative py-20 md:py-32 overflow-hidden bg-gradient-to-r from-emerald-50 to-green-50">
-        <div className="absolute inset-0 bg-[url('https://www.dzoom.org.es/wp-content/uploads/2017/07/seebensee-2384369-810x540.jpg')] bg-cover bg-center bg-no-repeat"></div>
+        <div className="absolute inset-0 bg-[url('/portadaotrooo.webp')] bg-cover bg-center bg-no-repeat"></div>
         <div className="container mx-auto px-4 max-w-6xl relative z-10">
           <div className="text-center mb-16">
             <h1 className="text-4xl md:text-6xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-emerald-600 to-green-500">
@@ -522,7 +522,7 @@ export default function LugaresTuristicos() {
             {/* Imagen de entretenimiento */}
             <div className="relative">
               <img
-                src="/img/entretenimiento.jpg"
+                src="/entretenimiento111.jpg"
                 alt="Turismo de Entretenimiento"
                 className="rounded-3xl shadow-2xl w-full object-cover"
               />

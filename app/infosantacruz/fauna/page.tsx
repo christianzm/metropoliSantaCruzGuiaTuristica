@@ -46,7 +46,7 @@ const FaunaPage = () => {
       description:
         "Fundado en 1979, el Zoológico Municipal de Santa Cruz alberga más de 500 animales de 150 especies diferentes, muchas de ellas nativas de la región. El zoológico se enfoca en la conservación de especies en peligro de extinción y en la educación ambiental.",
       image:
-        "https://www.fundacionaquae.org/wp-content/uploads/2018/10/proteger-a-los-animales-1024x654.jpg",
+        "/zoologico.jpg",
       location: "Av. Noel Kempff Mercado, Santa Cruz de la Sierra",
       highlights:
         "jaguar, oso hormiguero gigante, paraba azul, monos capuchinos",
@@ -55,7 +55,7 @@ const FaunaPage = () => {
       title: "Jardín Botánico Municipal",
       description:
         "Este oasis verde en medio de la ciudad cuenta con 186 hectáreas dedicadas a la conservación de la flora regional y nacional. El jardín botánico alberga más de 4,000 especies de plantas, incluyendo una impresionante colección de orquídeas y cactus.",
-      image: "https://images.unsplash.com/photo-1466692476868-aef1dfb1e735?q=80&w=1000",
+      image: "/Jardín_Botánico_Municipal.jpg",
       location: "Kilómetro 8 1/2 carretera a Cotoca, Santa Cruz de la Sierra",
       highlights: "orquídeas, cactus, aves, mariposas, pequeños mamíferos",
     },
@@ -63,7 +63,7 @@ const FaunaPage = () => {
       title: "Parque Regional Lomas de Arena",
       description:
         "A solo 17 km de Santa Cruz, este parque regional de 14,000 hectáreas combina dunas de arena, lagunas y bosques húmedos, creando un ecosistema único que alberga más de 300 especies de aves, reptiles y mamíferos.",
-      image: "https://images.unsplash.com/photo-1504280509247-0310476f94f8?q=80&w=1000",
+      image: "/lomasdearena.jpg",
       location: "A 17 km al sur de Santa Cruz de la Sierra",
       highlights: "flamencos, garzas, monos capuchinos, zorros, reptiles",
     },
@@ -71,7 +71,7 @@ const FaunaPage = () => {
       title: "Parque Arenal",
       description:
         "Este parque urbano es un pulmón verde en el corazón de la ciudad, con lagunas artificiales y senderos naturales donde se pueden observar diversas especies de aves acuáticas y pequeños mamíferos.",
-      image: "https://live.staticflickr.com/3953/15537482869_0066b5791c_b.jpg",
+      image: "/parque-el-arenal.jpg",
       location: "Av Beni entre caballero y murillo, Santa Cruz de la Sierra",
       highlights: "aves acuáticas, patos, tortugas, iguanas, mariposas",
     },
@@ -79,7 +79,7 @@ const FaunaPage = () => {
       title: "Parque Ecológico Güembé",
       description:
         "Un complejo ecoturístico que combina reserva natural con instalaciones recreativas. Alberga mariposario, aviario, senderos ecológicos y un centro de rescate de animales silvestres.",
-      image: "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/12/32/30/1e/biocentro-guembe.jpg?w=1200&h=-1&s=1",
+      image: "/Piscina-plantas-1024x591.webp",
       location: "Camino a Porongo, Santa Cruz de la Sierra",
       highlights: "mariposario, aviario, monos, reptiles, piscinas naturales",
     },
@@ -87,7 +87,7 @@ const FaunaPage = () => {
       title: "Colpa Caranda",
       description:
         "Un refugio natural donde cientos de guacamayos y loros se reúnen diariamente al amanecer para alimentarse de arcilla rica en minerales, creando un espectáculo natural único.",
-      image: "https://images.unsplash.com/photo-1552071379-041b32707fed?q=80&w=1000",
+      image: "/colpacaranda.jpg",
       location: "Carretera Belgica, Santa Cruz de la Sierra",
       highlights: "guacamayos, loros, periquitos, tucanes",
     },
@@ -95,7 +95,7 @@ const FaunaPage = () => {
       title: "Curichi La Madre",
       description:
         "El Curichi La Madre es un área protegida y reserva ecológica urbana que alberga una rica biodiversidad de flora y fauna. Es uno de los pocos humedales que aún se conservan dentro de la mancha urbana de Santa Cruz de la Sierra. Es ideal para caminatas ecológicas, avistamiento de aves y educación ambiental.",
-      image: "https://images.unsplash.com/photo-1440342359726-e2bb38329507?q=80&w=1000",
+      image: "/curichilamadre.jpg",
       location:
         "Entre 4to Calle pejerrey y Av. El palmar Santa Cruz de la Sierra",
       highlights:
@@ -105,7 +105,7 @@ const FaunaPage = () => {
       title: "Laguna Guapilo - Parque Urbano",
       description:
         "La Laguna Guapilo es un parque urbano con un pequeño cuerpo de agua rodeado de áreas verdes, ideal para el esparcimiento familiar, caminatas y observación de fauna urbana. Es un espacio de recreación y descanso para vecinos y visitantes, en medio de la ciudad.",
-      image: "https://images.unsplash.com/photo-1472214103451-9374bd1c798e?q=80&w=1000",
+      image: "/lagunaguapilo.jpg",
       location: "Av. Guapilo, Santa Cruz de la Sierra",
       highlights:
         "laguna artificial, caminatas, zonas verdes, aves urbanas, juegos infantiles",
@@ -114,7 +114,7 @@ const FaunaPage = () => {
       title: "Parque Ecológico Yvaga Guazú",
       description:
         "El Parque Ecológico Yvaga Guazú es un centro de interpretación ambiental y conservación, que ofrece recorridos educativos entre jardines botánicos, viveros, lagunas y espacios temáticos que promueven la conciencia ecológica. Es un lugar ideal para toda la familia y grupos escolares.",
-      image: "https://images.unsplash.com/photo-1596706173007-e85d8520743b?q=80&w=1000",
+      image: "/parqueyvagaguazu.jpg",
       location: "1/2 Km 12, Santa Cruz de la Sierra",
       highlights:
         "jardín botánico, vivero, senderos naturales, actividades educativas, lagunas, aves y mariposas",
@@ -127,19 +127,19 @@ const FaunaPage = () => {
       title: "Parque Amboro",
       description:
         "Parque nacional de biodiversidad única donde se encuentran la Amazonía, los Andes y el Chaco. Ideal para el ecoturismo y la observación de fauna.",
-      image: "https://images.unsplash.com/photo-1518182170546-0766aa6f1f50?q=80&w=1000",
+      image: "/parque-nacional-amboro.jpg",
     },
     {
       title: "La Rinconada",
       description:
         "Parque ecológico familiar cerca de Santa Cruz, conocido por sus jardines, la flor de loto gigante Victoria Amazónica y sus piscinas.",
-      image: "https://images.unsplash.com/photo-1598555749603-9d10c0e21e05?q=80&w=1000",
+      image: "/larinconada.jpg",
     },
     {
       title: "Rio Selva",
       description:
         "Resort familiar con cabañas, piscinas y actividades recreativas ubicado en Warnes, ideal para escapadas de fin de semana.",
-      image: "https://images.unsplash.com/photo-1571003123894-1f0594d2b5d9?q=80&w=1000",
+      image: "/rioselva.avif",
     },
   ];
 
@@ -326,7 +326,7 @@ const FaunaPage = () => {
       <section className="relative h-[80vh] flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0">
           <img 
-            src="https://images.unsplash.com/photo-1588392382834-a891154bca4d?q=80&w=1920" 
+            src="/portadazoologico.jpg" 
             alt="Portada Fauna" 
             className="w-full h-full object-cover"
           />
