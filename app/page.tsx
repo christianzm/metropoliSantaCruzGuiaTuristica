@@ -687,6 +687,35 @@ export default function HomePage() {
                     </div>
                   </Link>
                 </div>
+                {/* Sección: Historia, Iglesia y Comunidad */}
+<div className="mt-8 bg-white/10 p-6 rounded-2xl border border-white/20 backdrop-blur-sm shadow-xl text-center transform transition-all hover:scale-[1.02] duration-300">
+  {/* Imagen representativa (opcional, puedes cambiar el src) */}
+  <div className="relative w-full h-40 mb-5 rounded-lg overflow-hidden group">
+    <Image
+      src="/images/catedral_scz.jpg" 
+      alt="Historia e Iglesias de Santa Cruz"
+      fill
+      className="object-cover group-hover:scale-110 transition-transform duration-500"
+    />
+    <div className="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors duration-500"></div>
+  </div>
+
+  {/* Textos */}
+  <h4 className="text-2xl md:text-3xl font-bold text-yellow-400 mb-3 font-serif drop-shadow-md">
+    Historia, Fe y Comunidad
+  </h4>
+  <p className="text-white/95 text-sm md:text-base mb-6 leading-relaxed">
+    Viaja en el tiempo y descubre el legado cultural de Santa Cruz. Explora la riqueza arquitectónica de nuestras iglesias, las raíces vivas de nuestra comunidad y los relatos que forjaron la identidad metropolitana.
+  </p>
+
+  {/* Botón hacia app/historia */}
+  <Link href="/historia">
+    <Button className="bg-yellow-400 hover:bg-yellow-500 text-green-900 font-extrabold px-8 py-6 rounded-full shadow-[0_4px_14px_0_rgba(250,204,21,0.39)] hover:shadow-[0_6px_20px_rgba(250,204,21,0.23)] hover:-translate-y-1 transition-all duration-300 text-lg w-full sm:w-auto">
+      Descubrir la Historia
+      <ArrowRight className="w-5 h-5 ml-2 inline-block animate-pulse" />
+    </Button>
+  </Link>
+</div>
               </div>
             </div>
 
