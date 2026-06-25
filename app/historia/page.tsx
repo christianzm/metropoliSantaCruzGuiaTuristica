@@ -352,6 +352,7 @@ export default function HistoriaPage() {
                       <p className="text-gray-500 font-medium">{lugar.shortDesc}</p>
                     </div>
                     <button 
+                    
                       onClick={() => handleMainPlaceClick(lugar)}
                       className={`shrink-0 flex items-center gap-2 px-5 py-3 rounded-xl font-bold transition-colors ${
                         activeMapLocation.title === lugar.name 

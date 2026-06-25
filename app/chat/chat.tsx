@@ -1,24 +1,72 @@
 "use client";
 
 import React, { useState, useRef, useEffect } from "react";
-import Link from "next/link"; // <-- NUEVO: Importación para la navegación
+import Link from "next/link";
+import { useRouter } from "next/navigation";
+
+// Definición para compatibilidad con navegadores que usan prefijo
+declare global {
+  interface Window {
+    SpeechRecognition: any;
+    webkitSpeechRecognition: any;
+  }
+}
 
 const FloatingChat: React.FC = () => {
   const [open, setOpen] = useState(false);
   const [messages, setMessages] = useState<{ from: "user" | "ia"; text: string }[]>([]);
   const [input, setInput] = useState("");
   const [isLoading, setIsLoading] = useState(false);
+  const [isListening, setIsListening] = useState(false); // <-- NUEVO: Estado para el micrófono
   const messagesEndRef = useRef<HTMLDivElement>(null);
+  const recognitionRef = useRef<any>(null); // <-- NUEVO: Ref para la instancia de SpeechRecognition
+  const router = useRouter(); // <-- NUEVO: Hook para la navegación
 
   // Auto-scroll al final
   useEffect(() => {
     messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
   }, [messages, isLoading]);
 
-  const handleSend = async () => {
-    if (!input.trim()) return;
+  // NUEVO: Efecto para inicializar el reconocimiento de voz
+  useEffect(() => {
+    const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
 
-    const userText = input;
+    if (SpeechRecognition) {
+      const recognition = new SpeechRecognition();
+      recognition.continuous = false; // Solo una frase a la vez
+      recognition.lang = 'es-ES'; // Establecer idioma a español
+      recognition.interimResults = false;
+
+      recognition.onstart = () => {
+        setIsListening(true);
+      };
+
+      recognition.onresult = (event: any) => {
+        const transcript = event.results[0][0].transcript;
+        handleSend(transcript, true); // Enviar automáticamente y solicitar respuesta por voz
+      };
+
+      recognition.onerror = (event: any) => {
+        console.error("Error de reconocimiento de voz:", event.error);
+        setIsListening(false);
+      };
+
+      recognition.onend = () => {
+        setIsListening(false);
+      };
+
+      recognitionRef.current = recognition;
+    } else {
+      console.warn("El reconocimiento de voz no es compatible con este navegador.");
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []); // Se deshabilita la advertencia de dependencias porque handleSend se usa de una manera que evita cierres viciados.
+
+  const handleSend = async (messageText?: string, speakResponse: boolean = false) => {
+    const textToSend = messageText || input;
+    if (!textToSend.trim()) return;
+
+    const userText = textToSend;
     // 1. Mostrar mensaje del usuario inmediatamente
     setMessages((prev) => [...prev, { from: "user", text: userText }]);
     setInput("");
@@ -41,6 +89,18 @@ const FloatingChat: React.FC = () => {
       // 3. Mostrar respuesta de la IA
       setMessages((prev) => [...prev, { from: "ia", text: data.reply }]);
 
+      // NUEVO: Reproducir la respuesta si se solicitó
+      if (speakResponse && data.reply) {
+        window.speechSynthesis.cancel(); // Cancela cualquier habla anterior
+        const utterance = new SpeechSynthesisUtterance(data.reply);
+        utterance.lang = "es-ES";
+        // NUEVO: Navegar a /explore cuando termine de hablar
+        utterance.onend = () => {
+          router.push('/explore');
+        };
+        window.speechSynthesis.speak(utterance);
+      }
+
     } catch (error: any) {
       console.error("Error chat:", error);
       setMessages((prev) => [
@@ -49,6 +109,20 @@ const FloatingChat: React.FC = () => {
       ]);
     } finally {
       setIsLoading(false);
+    }
+  };
+
+  // NUEVO: Handler para el clic en el micrófono
+  const handleMicClick = () => {
+    if (!recognitionRef.current) {
+      alert("El reconocimiento de voz no es compatible con tu navegador.");
+      return;
+    }
+
+    if (isListening) {
+      recognitionRef.current.stop();
+    } else {
+      recognitionRef.current.start();
     }
   };
 
@@ -164,8 +238,26 @@ const FloatingChat: React.FC = () => {
                 border: "1px solid #ddd", outline: "none", fontSize: 14
               }}
             />
+            {/* NUEVO: Botón de Micrófono */}
             <button
-              onClick={handleSend}
+              onClick={handleMicClick}
+              disabled={isLoading}
+              style={{
+                background: isListening ? "#e74c3c" : "#f0f0f0",
+                color: isListening ? "#fff" : "#333",
+                border: "1px solid #ddd",
+                borderRadius: "50%",
+                width: 40, height: 40,
+                cursor: "pointer",
+                display: "flex", alignItems: "center", justifyContent: "center",
+                fontSize: 18,
+                transition: "background 0.3s"
+              }}
+            >
+              🎤
+            </button>
+            <button
+              onClick={() => handleSend()}
               disabled={isLoading || !input.trim()}
               style={{
                 background: isLoading ? "#ccc" : "#2ecc40",
