@@ -6,18 +6,28 @@ import {Landmark,Palette, MapPin,Star,CloudSun,Menu,X,Maximize,XCircle,Trees,Sto
 import {Phone,Mail,Facebook,Instagram,Twitter,Youtube,} from "lucide-react";
 import Image from "next/image";
 
-
+interface Content {
+  title: string;
+  icon: React.ReactElement;
+  description: string;
+  image: string;
+  location: string;
+  mapLink: string;
+  recommendation: string;
+}
 
 export default function InfoSantaCruzPage() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
-  const [selectedImage, setSelectedImage] = useState(null);
-  const [selectedContent, setSelectedContent] = useState(null);
+  const [selectedImage, setSelectedImage] = useState<string | null>(null);
+  const [selectedContent, setSelectedContent] = useState<Content | null>(null);
 
   useEffect(() => {
     // Este código SOLO se ejecuta en el cliente, después del renderizado inicial.
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50);
+      if (typeof window !== "undefined") {
+        setIsScrolled(window.scrollY > 50);
+      }
     };
     window.addEventListener("scroll", handleScroll);
     return () => {
@@ -32,7 +42,7 @@ export default function InfoSantaCruzPage() {
     categories: "Categorías",
   };
   // Contenido para cada sección
-  const sectionContent = {
+  const sectionContent: Record<string, Content> = {
     catedral: {
       title: "Catedral Metropolitana",
       icon: <Landmark className="w-7 h-7 text-green-500" />,
@@ -68,7 +78,7 @@ export default function InfoSantaCruzPage() {
       title: "CLUB 24 DE SEPTIEMBRE",
       icon: <Store className="w-7 h-7 text-yellow-500" />,
       description:
-        "Ubicado en la Plaza 24 de Septiembre, este club histórico es un símbolo de tradición y encuentro social en Santa Cruz.",
+        "Ubicado en la Plaza 24 de Septiembre, este club histórico es un símbolo de tradición y encuentro social. Su arquitectura neoclásica y sus salones han sido testigos de los eventos más importantes de la ciudad, convirtiéndolo en un pilar de la vida cruceña.",
       image:"/club-social.jpg", // ✅ Aquí la imagen real
       location:
         "Calle Libertad esquina Ayacucho Plaza 24 de Septiembre esquina Suroeste",
@@ -78,9 +88,9 @@ export default function InfoSantaCruzPage() {
 
     recova: {
       title: "PASEO DE LA RECOVA",
-      icon: <TreeDeciduous className="w-7 h-7 text-marron-500" />,
+      icon: <TreeDeciduous className="w-7 h-7 text-yellow-700" />,
       description:
-        "Ubicado en la primera manzana fundacional de Santa Cruz, este centro cultural acoge exposiciones contemporáneas de artistas nacionales e internacionales. Fusionando estilos como realismo, surrealismo, arte abstracto y minimalismo, Manzana Uno ofrece una experiencia inmersiva e inclusiva para todo público. Ideal para una tarde de inspiración, cultura y reflexión en pleno centro histórico.",
+        "Un encantador pasaje artesanal donde se puede encontrar una gran variedad de artesanías, souvenirs y productos típicos de la región. Es el lugar perfecto para comprar recuerdos únicos y disfrutar de la cultura local en un ambiente pintoresco y tradicional.",
       image:
         "/paseo-artesanal-la-recova.jpg", // ✅ Aquí la imagen real
       location: "Av. libertad entre calle Florida y calle junin",
@@ -90,9 +100,9 @@ export default function InfoSantaCruzPage() {
 
     culturacasa: {
       title: "CASA DE LA CULTURA",
-      icon: <Store className="w-7 h-7 text-Maroon-500" />,
+      icon: <Store className="w-7 h-7 text-red-700" />,
       description:
-        "Ubicado en la primera manzana fundacional de Santa Cruz, este centro cultural acoge exposiciones contemporáneas de artistas nacionales e internacionales. Fusionando estilos como realismo, surrealismo, arte abstracto y minimalismo, Manzana Uno ofrece una experiencia inmersiva e inclusiva para todo público. Ideal para una tarde de inspiración, cultura y reflexión en pleno centro histórico.",
+        "Principal centro de difusión artística y cultural de Santa Cruz. Ofrece una variada programación que incluye teatro, conciertos, exposiciones de arte y talleres. Es un espacio vital para la expresión y el encuentro de artistas y el público.",
       image:
         "/casadelacultura.png", // ✅ Aquí la imagen real
       location: "Libertad 65, Santa Cruz de la Sierra",
@@ -104,7 +114,7 @@ export default function InfoSantaCruzPage() {
       title: "EL CRISTO REDENTOR",
       icon: <Church className="w-7 h-7 text-yellow-500" />,
       description:
-        "Ubicado en la primera manzana fundacional de Santa Cruz, este centro cultural acoge exposiciones contemporáneas de artistas nacionales e internacionales. Fusionando estilos como realismo, surrealismo, arte abstracto y minimalismo, Manzana Uno ofrece una experiencia inmersiva e inclusiva para todo público. Ideal para una tarde de inspiración, cultura y reflexión en pleno centro histórico.",
+        "Monumento icónico de Santa Cruz, una imponente escultura de bronce que se alza en el segundo anillo. Es un punto de encuentro cívico y social, y un símbolo de la hospitalidad y fe de la ciudad. Su rotonda es escenario de celebraciones y eventos importantes.",
       image:"/cristo.jpeg", // ✅ Aquí la imagen real
       location: "Calle Independencia esq. Ayacucho",
       mapLink: "https://maps.app.goo.gl/4VE4g7Kk746eWrqZ7",
@@ -115,7 +125,7 @@ export default function InfoSantaCruzPage() {
       title: "ALTAR PAPAL",
       icon: <Church className="w-7 h-7 text-yellow-500" />,
       description:
-        "Ubicado en la primera manzana fundacional de Santa Cruz, este centro cultural acoge exposiciones contemporáneas de artistas nacionales e internacionales. Fusionando estilos como realismo, surrealismo, arte abstracto y minimalismo, Manzana Uno ofrece una experiencia inmersiva e inclusiva para todo público. Ideal para una tarde de inspiración, cultura y reflexión en pleno centro histórico.",
+        "Construido para la visita del Papa Juan Pablo II en 1988, este imponente altar es un monumento a la fe cruceña. Ubicado en una zona de gran afluencia, es un lugar de peregrinación y un recordatorio de uno de los eventos más significativos en la historia moderna de la ciudad.",
       image:
         "/altarpapal.jpg", // ✅ Aquí la imagen real
       location: "Av. Cristobal de mendoza y Av. Monseñor rivero",
@@ -127,7 +137,7 @@ export default function InfoSantaCruzPage() {
       title: "EL CAMBÓDROMO",
       icon: <Trees className="w-7 h-7 text-green-500" />,
       description:
-        "Ubicado en la primera manzana fundacional de Santa Cruz, este centro cultural acoge exposiciones contemporáneas de artistas nacionales e internacionales. Fusionando estilos como realismo, surrealismo, arte abstracto y minimalismo, Manzana Uno ofrece una experiencia inmersiva e inclusiva para todo público. Ideal para una tarde de inspiración, cultura y reflexión en pleno centro histórico.",
+        "Un extenso corsódromo diseñado para el famoso Carnaval Cruceño. Durante el resto del año, se transforma en un espacio multifuncional para eventos masivos, actividades deportivas y recreativas, convirtiéndose en un pulmón de esparcimiento para la ciudad.",
       image:
         "/Cambódromo-Santa-Cruz.jpg", // ✅ Aquí la imagen real
       location: "Av. mutualista 4to anillo",
@@ -137,7 +147,7 @@ export default function InfoSantaCruzPage() {
   };
 
   // Función para abrir el modal con la imagen ampliada
-  const openImageModal = (sectionId: string) => {
+  const openImageModal = (sectionId: keyof typeof sectionContent) => {
     setSelectedImage(sectionContent[sectionId].image);
     setSelectedContent(sectionContent[sectionId]);
   };
@@ -170,15 +180,17 @@ export default function InfoSantaCruzPage() {
             href="/"
             className="flex items-center gap-3 select-none hover:opacity-80 transition"
           >
-            <img
+            <Image
               src="/logo upds verde.png"
               alt="Logo UPDS"
-              className="w-10 h-10"
+              width={40}
+              height={40}
             />
-            <img
+            <Image
               src="/Logotipo 3 verde.png"
               alt="Turismo Metropolitano Logo"
-              className="w-10 h-10"
+              width={40}
+              height={40}
             />
             <span className="font-bold text-green-700 text-2xl">
               Turismo Metropolitano
@@ -254,7 +266,7 @@ export default function InfoSantaCruzPage() {
                 Inicio
               </Link>
               <Link
-                href="#explorar"
+                href="/explore"
                 className="hover:text-green-700 transition font-medium"
                 onClick={() => setIsMenuOpen(false)}
               >
@@ -263,6 +275,7 @@ export default function InfoSantaCruzPage() {
               <Link
                 href="/infosantacruz"
                 className="hover:text-green-700 transition font-medium"
+                onClick={() => setIsMenuOpen(false)}
               >
                 Santa Cruz
               </Link>
@@ -270,6 +283,7 @@ export default function InfoSantaCruzPage() {
               <Link
                 href="/entretenimiento"
                 className="hover:text-green-700 transition font-medium"
+                onClick={() => setIsMenuOpen(false)}
               >
                 Rincones para Disfrutar
               </Link>
@@ -282,10 +296,12 @@ export default function InfoSantaCruzPage() {
       <section className="w-full">
         <div className="relative w-full h-[500px] overflow-hidden">
           {/* Imagen de fondo */}
-          <img
-            src="/santacruz_dia.jpg"
+          <Image
+            src="/santacruz_dia.jpg" // Asegúrate que esta imagen esté en /public
             alt="Santa Cruz de la Sierra"
+            fill
             className="absolute inset-0 w-full h-full object-cover"
+            priority
           />
           {/* Overlay oscuro */}
           <div className="absolute inset-0 bg-black bg-opacity-40" />
@@ -347,13 +363,14 @@ export default function InfoSantaCruzPage() {
             </div>
           </div>
           <div
-            className="md:w-1/2 relative group cursor-pointer"
+            className="md:w-1/2 relative h-[400px] group cursor-pointer"
             onClick={() => openImageModal("catedral")}
           >
-            <img
+            <Image
               src={sectionContent.catedral.image}
               alt={sectionContent.catedral.title}
-              className="rounded-2xl shadow-xl border border-gray-200 object-cover w-full h-[400px]"
+              fill
+              className="rounded-2xl shadow-xl border border-gray-200 object-cover"
             />
             <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-30 transition-all duration-300 rounded-2xl flex items-center justify-center">
               <div className="bg-white/80 text-green-700 p-2 rounded-full opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 transition-all duration-300">
@@ -366,13 +383,14 @@ export default function InfoSantaCruzPage() {
         {/* SECCIÓN: PLAZA 24 DE SEPTIEMBRE */}
         <div className="grid md:grid-cols-2 gap-10 items-center bg-gradient-to-br from-white via-green-50 to-white rounded-3xl p-8 shadow-xl mb-12">
           <div
-            className="relative group cursor-pointer"
+            className="relative h-[400px] group cursor-pointer"
             onClick={() => openImageModal("plaza")}
           >
-            <img
+            <Image
               src={sectionContent.plaza.image}
               alt={sectionContent.plaza.title}
-              className="rounded-2xl shadow-lg border border-gray-200 object-cover w-full h-[400px]"
+              fill
+              className="rounded-2xl shadow-lg border border-gray-200 object-cover"
             />
             <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-30 transition-all duration-300 rounded-2xl flex items-center justify-center">
               <div className="bg-white/80 text-green-700 p-2 rounded-full opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 transition-all duration-300">
@@ -409,13 +427,14 @@ export default function InfoSantaCruzPage() {
         {/* SECCIÓN: EL CRISTO REDENTOR */}
         <div className="grid md:grid-cols-2 gap-10 items-center bg-gradient-to-br from-white via-green-50 to-white rounded-3xl p-8 shadow-xl mb-12">
           <div
-            className="relative group cursor-pointer"
+            className="relative h-[400px] group cursor-pointer"
             onClick={() => openImageModal("cristoredentor")}
           >
-            <img
+            <Image
               src={sectionContent.cristoredentor.image}
               alt={sectionContent.cristoredentor.title}
-              className="rounded-2xl shadow-lg border border-gray-200 object-cover w-full h-[400px]"
+              fill
+              className="rounded-2xl shadow-lg border border-gray-200 object-cover"
             />
             <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-30 transition-all duration-300 rounded-2xl flex items-center justify-center">
               <div className="bg-white/80 text-green-700 p-2 rounded-full opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 transition-all duration-300">
@@ -485,13 +504,14 @@ export default function InfoSantaCruzPage() {
 
           {/* Imagen a la derecha */}
           <div
-            className="md:w-1/2 relative group cursor-pointer"
+            className="md:w-1/2 relative h-[400px] group cursor-pointer"
             onClick={() => openImageModal("manzana")}
           >
-            <img
+            <Image
               src={sectionContent.manzana.image}
               alt={sectionContent.manzana.title}
-              className="rounded-2xl shadow-xl border border-gray-200 object-cover w-full h-[400px]"
+              fill
+              className="rounded-2xl shadow-xl border border-gray-200 object-cover"
             />
             <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-30 transition-all duration-300 rounded-2xl flex items-center justify-center">
               <div className="bg-white/80 text-green-700 p-2 rounded-full opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 transition-all duration-300">
@@ -504,13 +524,14 @@ export default function InfoSantaCruzPage() {
         <div className="grid md:grid-cols-2 gap-10 items-center bg-gradient-to-br from-white via-green-50 to-white rounded-3xl p-8 shadow-xl mb-12">
           {/* Imagen con efecto ampliable */}
           <div
-            className="relative group cursor-pointer"
+            className="relative h-[400px] group cursor-pointer"
             onClick={() => openImageModal("club")}
           >
-            <img
+            <Image
               src={sectionContent.club.image}
               alt={sectionContent.club.title}
-              className="rounded-2xl shadow-lg border border-gray-200 object-cover w-full h-[400px]"
+              fill
+              className="rounded-2xl shadow-lg border border-gray-200 object-cover"
             />
             <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-30 transition-all duration-300 rounded-2xl flex items-center justify-center">
               <div className="bg-white/80 text-green-700 p-2 rounded-full opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 transition-all duration-300">
@@ -580,13 +601,14 @@ export default function InfoSantaCruzPage() {
 
           {/* Imagen a la derecha */}
           <div
-            className="md:w-1/2 relative group cursor-pointer"
+            className="md:w-1/2 relative h-[400px] group cursor-pointer"
             onClick={() => openImageModal("recova")}
           >
-            <img
+            <Image
               src={sectionContent.recova.image}
               alt={sectionContent.recova.title}
-              className="rounded-2xl shadow-xl border border-gray-200 object-cover w-full h-[400px]"
+              fill
+              className="rounded-2xl shadow-xl border border-gray-200 object-cover"
             />
             <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-30 transition-all duration-300 rounded-2xl flex items-center justify-center">
               <div className="bg-white/80 text-green-700 p-2 rounded-full opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 transition-all duration-300">
@@ -599,13 +621,14 @@ export default function InfoSantaCruzPage() {
         {/* SECCIÓN: ALTAR PAPAL */}
         <div className="grid md:grid-cols-2 gap-10 items-center bg-gradient-to-br from-white via-green-50 to-white rounded-3xl p-8 shadow-xl mb-12">
           <div
-            className="relative group cursor-pointer"
+            className="relative h-[400px] group cursor-pointer"
             onClick={() => openImageModal("altarpapal")}
           >
-            <img
+            <Image
               src={sectionContent.altarpapal.image}
               alt={sectionContent.altarpapal.title}
-              className="rounded-2xl shadow-lg border border-gray-200 object-cover w-full h-[400px]"
+              fill
+              className="rounded-2xl shadow-lg border border-gray-200 object-cover"
             />
             <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-30 transition-all duration-300 rounded-2xl flex items-center justify-center">
               <div className="bg-white/80 text-green-700 p-2 rounded-full opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 transition-all duration-300">
@@ -675,13 +698,14 @@ export default function InfoSantaCruzPage() {
 
           {/* Imagen a la derecha */}
           <div
-            className="md:w-1/2 relative group cursor-pointer"
+            className="md:w-1/2 relative h-[400px] group cursor-pointer"
             onClick={() => openImageModal("culturacasa")}
           >
-            <img
+            <Image
               src={sectionContent.culturacasa.image}
               alt={sectionContent.culturacasa.title}
-              className="rounded-2xl shadow-xl border border-gray-200 object-cover w-full h-[400px]"
+              fill
+              className="rounded-2xl shadow-xl border border-gray-200 object-cover"
             />
             <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-30 transition-all duration-300 rounded-2xl flex items-center justify-center">
               <div className="bg-white/80 text-green-700 p-2 rounded-full opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 transition-all duration-300">
@@ -694,13 +718,14 @@ export default function InfoSantaCruzPage() {
         {/* SECCIÓN: EL CAMBÓDROMO */}
         <div className="grid md:grid-cols-2 gap-10 items-center bg-gradient-to-br from-white via-green-50 to-white rounded-3xl p-8 shadow-xl mb-12">
           <div
-            className="relative group cursor-pointer"
+            className="relative h-[400px] group cursor-pointer"
             onClick={() => openImageModal("cambodromo")}
           >
-            <img
+            <Image
               src={sectionContent.cambodromo.image}
               alt={sectionContent.cambodromo.title}
-              className="rounded-2xl shadow-lg border border-gray-200 object-cover w-full h-[400px]"
+              fill
+              className="rounded-2xl shadow-lg border border-gray-200 object-cover"
             />
             <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-30 transition-all duration-300 rounded-2xl flex items-center justify-center">
               <div className="bg-white/80 text-green-700 p-2 rounded-full opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 transition-all duration-300">
@@ -751,42 +776,43 @@ export default function InfoSantaCruzPage() {
                 <XCircle size={28} />
               </button>
 
-              <div className="md:w-1/2 h-[50vh] md:h-auto overflow-hidden">
-                <img
+              <div className="relative md:w-1/2 h-[50vh] md:h-auto overflow-hidden">
+                <Image
                   src={selectedImage}
-                  alt={selectedContent.title}
-                  className="w-full h-full object-cover"
+                  alt={selectedContent?.title || "Imagen ampliada"}
+                  fill
+                  className="object-cover"
                 />
               </div>
 
               <div className="md:w-1/2 p-6 bg-white overflow-y-auto max-h-[50vh] md:max-h-[80vh]">
                 <h3 className="text-3xl font-bold text-green-800 mb-4 flex items-center gap-3">
-                  {selectedContent.icon} {selectedContent.title}
+                  {selectedContent?.icon} {selectedContent?.title}
                 </h3>
 
                 <div className="flex flex-wrap gap-4 mb-6">
                   <div className="flex items-center gap-2 bg-green-100 px-4 py-2 rounded-full">
                     <MapPin size={18} className="text-green-700" />
                     <a
-                      href={selectedContent.mapLink}
+                      href={selectedContent?.mapLink}
                       target="_blank"
                       rel="noopener noreferrer"
                       className="text-green-700 hover:underline"
                     >
-                      {selectedContent.location}
+                      {selectedContent?.location}
                     </a>
                   </div>
 
                   <div className="flex items-center gap-2 bg-blue-100 px-4 py-2 rounded-full">
                     <CloudSun size={18} className="text-blue-500" />
                     <span className="text-blue-700">
-                      {selectedContent.recommendation}
+                      {selectedContent?.recommendation}
                     </span>
                   </div>
                 </div>
 
                 <p className="text-gray-700 text-lg leading-relaxed mb-6">
-                  {selectedContent.description}
+                  {selectedContent?.description}
                 </p>
 
                 <div className="mt-auto pt-4 border-t border-gray-200">
@@ -812,12 +838,14 @@ export default function InfoSantaCruzPage() {
 
           <div className="grid md:grid-cols-4 gap-8">
             {/* Tarjeta 1 */}
-            <div className="bg-white p-6 rounded-2xl shadow-lg border border-gray-200 hover:shadow-2xl transition duration-300 flex flex-col h-full">
-              <img
-                src="/images/gastronomia.png"
-                alt="Parque Urbano"
-                className="rounded-xl mb-4 h-52 w-full object-cover"
-              />
+            <div className="bg-white p-6 rounded-2xl shadow-lg border border-gray-200 hover:shadow-2xl transition duration-300 flex flex-col h-full">              <div className="relative h-52 w-full mb-4">
+                <Image
+                  src="/images/gastronomia.png"
+                  alt="Gastronomía Cruceña"
+                  fill
+                  className="rounded-xl object-cover"
+                />
+              </div>
               <div className="flex flex-col flex-grow">
                 <h3 className="text-xl font-semibold text-green-700 mb-2">
                   🍽️ Gastronomía Cruceña
@@ -843,11 +871,14 @@ export default function InfoSantaCruzPage() {
 
             {/* Tarjeta 2 */}
             <div className="bg-white p-6 rounded-2xl shadow-lg border border-gray-200 hover:shadow-2xl transition duration-300 flex flex-col h-full">
-              <img
-                src="/images/fauna.png"
-                alt="Parque ecologico"
-                className="rounded-xl mb-4 h-52 w-full object-cover"
-              />
+              <div className="relative h-52 w-full mb-4">
+                <Image
+                  src="/images/fauna.png"
+                  alt="Fauna de Santa Cruz"
+                  fill
+                  className="rounded-xl object-cover"
+                />
+              </div>
               <div className="flex flex-col flex-grow">
                 <h3 className="text-xl font-semibold text-green-700 mb-2">
                   🌳 Fauna
@@ -873,11 +904,14 @@ export default function InfoSantaCruzPage() {
 
             {/* Tarjeta 3 */}
             <div className="bg-white p-6 rounded-2xl shadow-lg border border-gray-200 hover:shadow-2xl transition duration-300 flex flex-col h-full">
-              <img
-                src="/images/evento.png"
-                alt="Eventos en Santa Cruz"
-                className="rounded-xl mb-4 h-52 w-full object-cover"
-              />
+              <div className="relative h-52 w-full mb-4">
+                <Image
+                  src="/images/evento.png"
+                  alt="Eventos en Santa Cruz"
+                  fill
+                  className="rounded-xl object-cover"
+                />
+              </div>
               <div className="flex flex-col flex-grow">
                 <h3 className="text-xl font-semibold text-green-700 mb-2">
                   📅 Eventos Cruceños
@@ -899,11 +933,14 @@ export default function InfoSantaCruzPage() {
 
             {/* Tarjeta 4 - Turismo de Negocios */}
             <div className="bg-white p-6 rounded-2xl shadow-lg border border-gray-200 hover:shadow-2xl transition duration-300 flex flex-col h-full">
-              <img
-                src="/images/negocio.png"
-                alt="Turismo de Negocios Santa Cruz"
-                className="rounded-xl mb-4 h-52 w-full object-cover"
-              />
+              <div className="relative h-52 w-full mb-4">
+                <Image
+                  src="/images/negocio.png"
+                  alt="Turismo de Negocios Santa Cruz"
+                  fill
+                  className="rounded-xl object-cover"
+                />
+              </div>
               <div className="flex flex-col flex-grow">
                 <h3 className="text-xl font-semibold text-green-700 mb-2">
                   💼 Turismo de Negocios

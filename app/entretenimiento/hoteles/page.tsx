@@ -13,14 +13,29 @@ const t = {
   categories: "Categorías",
 };
 
+interface Hotel {
+  id: number;
+  nombre: string;
+  categoria: string;
+  estrellas: number;
+  imagen: string;
+  descripcion: string;
+  servicios: string[];
+  ubicacion: string;
+  precio: string;
+  rating: number;
+  color: string;
+  style: string;
+}
+
 export default function EventoPage() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const [activeHotel, setActiveHotel] = useState(0);
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const [selectedHotel, setSelectedHotel] = useState(null);
+  const [selectedHotel, setSelectedHotel] = useState<Hotel | null>(null);
   const [isMounted, setIsMounted] = useState(false); // Para evitar problemas de hidratación
-  const sectionRefs = useRef([]);
+  const sectionRefs = useRef<(HTMLElement | null)[]>([]);
 
   useEffect(() => {
     setIsMounted(true); // Marcar que el componente está montado
@@ -31,7 +46,7 @@ export default function EventoPage() {
       const windowHeight = window.innerHeight;
       const scrollPosition = window.scrollY + windowHeight / 2;
 
-      sectionRefs.current.forEach((ref, index) => {
+      sectionRefs.current.forEach((ref: HTMLElement | null, index: number) => {
         if (ref) {
           const sectionTop = ref.offsetTop;
           const sectionBottom = sectionTop + ref.offsetHeight;
@@ -51,11 +66,11 @@ export default function EventoPage() {
     };
   }, []);
 
-  const scrollToHotel = (index) => {
+  const scrollToHotel = (index: number) => {
     sectionRefs.current[index]?.scrollIntoView({ behavior: "smooth" });
   };
 
-  const openHotelModal = (hotel) => {
+  const openHotelModal = (hotel: Hotel) => {
     setSelectedHotel(hotel);
     setIsModalOpen(true);
     document.body.style.overflow = "hidden";
@@ -67,7 +82,7 @@ export default function EventoPage() {
     setTimeout(() => setSelectedHotel(null), 300);
   };
 
-  const hoteles = [
+  const hoteles: Hotel[] = [
     {
       id: 1,
       nombre: "Hotel Los Tajibos",
@@ -514,7 +529,9 @@ export default function EventoPage() {
         {hoteles.map((hotel, index) => (
           <section
             key={hotel.id}
-            ref={(el) => (sectionRefs.current[index] = el)}
+            ref={(el) => {
+              sectionRefs.current[index] = el;
+            }}
             className={`py-20 relative overflow-hidden ${
               index % 2 === 0 ? "bg-white" : "bg-gray-50"
             }`}

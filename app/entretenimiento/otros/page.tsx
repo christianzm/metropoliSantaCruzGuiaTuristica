@@ -17,14 +17,7 @@ import {
 } from "lucide-react";
 import Image from "next/image";
 
-const t = {
-  links: "Enlaces",
-  home: "Inicio",
-  explore: "Explorar",
-  featured: "Destacados",
-  categories: "Categorías",
-};
-const lugares = [
+const lugares: Lugar[] = [
   {
     id: 1,
     nombre: "Hard Rock Cafe",
@@ -99,14 +92,33 @@ const lugares = [
   },
 ];
 
+interface Lugar {
+  id: number;
+  nombre: string;
+  descripcion: string;
+  categoria: string;
+  horario: string;
+  ubicacion: string;
+  imagen: string;
+  color: string;
+}
+
 export default function LugaresTuristicos() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
-  const [selectedPlace, setSelectedPlace] = useState(null);
+  const [selectedPlace, setSelectedPlace] = useState<Lugar | null>(null);
   const [activeIndex, setActiveIndex] = useState(0);
 
-  const sectionRefs = useRef([]);
-  const observerRef = useRef(null);
+  const t = {
+    links: "Enlaces",
+    home: "Inicio",
+    explore: "Explorar",
+    featured: "Destacados",
+    categories: "Categorías",
+  };
+
+  const sectionRefs = useRef<(HTMLElement | null)[]>([]);
+  const observerRef = useRef<IntersectionObserver | null>(null);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -119,7 +131,7 @@ export default function LugaresTuristicos() {
 
   useEffect(() => {
     // Configurar Intersection Observer para animaciones
-    observerRef.current = new IntersectionObserver(
+    const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
@@ -129,20 +141,19 @@ export default function LugaresTuristicos() {
       },
       { threshold: 0.1 }
     );
+    observerRef.current = observer;
 
     // Observar cada sección
     sectionRefs.current.forEach((section) => {
-      if (section) observerRef.current.observe(section);
+      if (section) observer.observe(section);
     });
 
     return () => {
-      if (observerRef.current) {
-        observerRef.current.disconnect();
-      }
+      observer.disconnect();
     };
   }, []);
 
-  const openLightbox = (place) => {
+  const openLightbox = (place: Lugar) => {
     setSelectedPlace(place);
     document.body.style.overflow = "hidden";
   };
@@ -152,11 +163,12 @@ export default function LugaresTuristicos() {
     document.body.style.overflow = "auto";
   };
 
-  const handleDotClick = (index) => {
+  const handleDotClick = (index: number) => {
     setActiveIndex(index);
-    document
-      .getElementById(`lugar-${index}`)
-      .scrollIntoView({ behavior: "smooth" });
+    const element = document.getElementById(`lugar-${index}`);
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+    }
   };
 
   return (
@@ -169,15 +181,17 @@ export default function LugaresTuristicos() {
             href="/"
             className="flex items-center gap-3 select-none hover:opacity-80 transition"
           >
-            <img
+            <Image
               src="/logo upds verde.png"
               alt="Logo UPDS"
-              className="w-10 h-10"
+              width={40}
+              height={40}
             />
-            <img
+            <Image
               src="/Logotipo 3 verde.png"
               alt="Turismo Metropolitano Logo"
-              className="w-10 h-10"
+              width={40}
+              height={40}
             />
             <span className="font-bold text-green-700 text-2xl">
               Turismo Metropolitano
@@ -317,9 +331,8 @@ export default function LugaresTuristicos() {
                         <Image
                           src={lugar.imagen}
                           alt={lugar.nombre}
-                          layout="fill"
-                          objectFit="cover"
-                          className="rounded-xl"
+                        fill
+                        className="rounded-xl object-cover"
                         />
                       </div>
                       <span className="text-xs font-medium">
@@ -340,7 +353,9 @@ export default function LugaresTuristicos() {
           <section
             key={lugar.id}
             id={`lugar-${index}`}
-            ref={(el) => (sectionRefs.current[index] = el)}
+            ref={(el) => {
+              sectionRefs.current[index] = el;
+            }}
             className="py-5 md:py-8 opacity-0 transform translate-y-10 transition-all duration-700"
             style={{ backgroundColor: index % 2 === 0 ? "#f9fafb" : "white" }}
           >
@@ -415,9 +430,8 @@ export default function LugaresTuristicos() {
                       <Image
                         src={lugar.imagen}
                         alt={lugar.nombre}
-                        layout="fill"
-                        objectFit="cover"
-                        className="rounded-2xl"
+                        fill
+                        className="object-cover rounded-2xl"
                       />
                     </div>
 
@@ -488,9 +502,8 @@ export default function LugaresTuristicos() {
                 <Image
                   src={selectedPlace.imagen}
                   alt={selectedPlace.nombre}
-                  layout="fill"
-                  objectFit="cover"
-                  className="rounded-xl"
+                  fill
+                  className="object-cover rounded-xl"
                 />
               </div>
 

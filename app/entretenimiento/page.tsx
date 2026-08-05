@@ -2,9 +2,24 @@
 
 import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
-import { Menu,X,Phone,Mail,Facebook,Instagram,Twitter,Youtube,MapPin,ChevronLeft,ChevronRight,Maximize,Star,Clock,ShoppingBag,} from "lucide-react";
+import {
+  Menu,
+  X,
+  Phone,
+  Mail,
+  Facebook,
+  Instagram,
+  Twitter,
+  Youtube,
+  MapPin,
+  ChevronLeft,
+  ChevronRight,
+  Maximize,
+  Star,
+  Clock,
+  ShoppingBag,
+} from "lucide-react";
 import Image from "next/image";
-import { useSearchParams } from "next/navigation";
 
 const t = {
   links: "Enlaces",
@@ -14,8 +29,20 @@ const t = {
   categories: "Categorías",
 };
 
+interface Comercial {
+  id: number;
+  nombre: string;
+  descripcion: string;
+  imagenes: string[];
+  ubicacion: string;
+  enlaceUbicacion: string;
+  horarios: string;
+  caracteristicas: string[];
+  rating: number;
+}
+
 // Datos de centros comerciales
-const comerciales = [
+const comerciales: Comercial[] = [
   {
     id: 1,
     nombre: "Ventura Mall",
@@ -173,14 +200,20 @@ const comerciales = [
   },
 ];
 
+interface ExpandedImage {
+  comercialIndex: number;
+  imageIndex: number;
+}
+
 export default function EventoPage() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const [activeTab, setActiveTab] = useState(0);
   const [currentCommercial, setCurrentCommercial] = useState(0);
-  const [expandedImage, setExpandedImage] = useState(null);
-  const carouselRef = useRef(null);
-  const intervalRef = useRef(null);
+  const [expandedImage, setExpandedImage] = useState<ExpandedImage | null>(
+    null
+  );
+  const intervalRef = useRef<NodeJS.Timeout | null>(null);
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
@@ -209,11 +242,13 @@ export default function EventoPage() {
 
     return () => {
       window.removeEventListener("scroll", handleScroll);
-      clearInterval(intervalRef.current);
+      if (intervalRef.current) {
+        clearInterval(intervalRef.current);
+      }
     };
   }, []);
 
-  const scrollToCommercial = (index) => {
+  const scrollToCommercial = (index: number) => {
     setCurrentCommercial(index);
     const element = document.getElementById(`comercial-${index}`);
     if (element) {
@@ -221,7 +256,7 @@ export default function EventoPage() {
     }
   };
 
-  const openImageModal = (comercialIndex, imageIndex) => {
+  const openImageModal = (comercialIndex: number, imageIndex: number) => {
     setExpandedImage({ comercialIndex, imageIndex });
     document.body.style.overflow = "hidden";
   };
@@ -371,10 +406,11 @@ export default function EventoPage() {
             activeTab === 0 ? "opacity-100" : "opacity-0"
           }`}
         >
-          <img 
+          <Image
             src="/comerciales.avif" 
             alt="Comercial 1" 
-            className="w-full h-full object-cover" 
+            fill
+            className="object-cover"
           />
           <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black opacity-80"></div>
         </div>
@@ -385,10 +421,11 @@ export default function EventoPage() {
             activeTab === 1 ? "opacity-100" : "opacity-0"
           }`}
         >
-          <img 
+          <Image
             src="/Ventura-Mall.jpg" /* Cambia por tu segunda imagen, ej: /comercial2.jpg */
             alt="Comercial 2" 
-            className="w-full h-full object-cover" 
+            fill
+            className="object-cover"
           />
           <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black opacity-80"></div>
         </div>
@@ -399,10 +436,11 @@ export default function EventoPage() {
             activeTab === 2 ? "opacity-100" : "opacity-0"
           }`}
         >
-          <img 
+          <Image
             src="/comerciial2.jpg" /* Cambia por tu tercera imagen, ej: /comercial3.jpg */
             alt="Comercial 3" 
-            className="w-full h-full object-cover" 
+            fill
+            className="object-cover"
           />
           <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black opacity-80"></div>
         </div>
@@ -847,7 +885,7 @@ export default function EventoPage() {
           {/* Contenedor de la Imagen */}
           <div
             className="relative max-w-6xl w-full h-[90vh] mx-4 flex items-center justify-center"
-            onClick={(e) => e.stopPropagation()}
+            onClick={(e: React.MouseEvent) => e.stopPropagation()}
           >
             <Image
               src={comerciales[expandedImage.comercialIndex].imagenes[expandedImage.imageIndex]}

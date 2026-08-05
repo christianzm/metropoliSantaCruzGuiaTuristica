@@ -27,14 +27,27 @@ const t = {
   categories: "Categorías",
 };
 
+interface GalleryImage {
+  id: number;
+  title: string;
+  description: string;
+  image: string;
+}
+
+interface Feature {
+  title: string;
+  value: string;
+  icon: string;
+}
+
 export default function EventoPage() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
-  const [activeImage, setActiveImage] = useState(null);
+  const [activeImage, setActiveImage] = useState<GalleryImage | null>(null);
   const [galleryIndex, setGalleryIndex] = useState(0);
-  const heroRef = useRef(null);
+  const heroRef = useRef<HTMLDivElement | null>(null);
 
-  const galleryImages = [
+  const galleryImages: GalleryImage[] = [
     {
       id: 1,
       title: "Vista del Estadio",
@@ -85,7 +98,7 @@ export default function EventoPage() {
     },
   ];
 
-  const features = [
+  const features: Feature[] = [
     { title: "Capacidad", value: "38,000 espectadores", icon: "👥" },
     { title: "Inauguración", value: "1938", icon: "🎉" },
     { title: "Superficie", value: "Césped natural", icon: "⚽" },
@@ -126,7 +139,7 @@ export default function EventoPage() {
     };
   }, []);
 
-  const openImageModal = (index) => {
+  const openImageModal = (index: number) => {
     setGalleryIndex(index);
     setActiveImage(galleryImages[index]);
   };
@@ -135,7 +148,7 @@ export default function EventoPage() {
     setActiveImage(null);
   };
 
-  const navigateGallery = (direction) => {
+  const navigateGallery = (direction: "prev" | "next") => {
     const newIndex =
       direction === "prev"
         ? (galleryIndex - 1 + galleryImages.length) % galleryImages.length
@@ -155,15 +168,17 @@ export default function EventoPage() {
             href="/"
             className="flex items-center gap-3 select-none hover:opacity-80 transition"
           >
-            <img
+            <Image
               src="/logo upds verde.png"
               alt="Logo UPDS"
-              className="w-10 h-10"
+              width={40}
+              height={40}
             />
-            <img
+            <Image
               src="/Logotipo 3 verde.png"
               alt="Turismo Metropolitano Logo"
-              className="w-10 h-10"
+              width={40}
+              height={40}
             />
             <span className="font-bold text-green-700 text-2xl">
               Turismo Metropolitano
@@ -290,9 +305,10 @@ export default function EventoPage() {
           </p>
           <button
             onClick={() =>
-              document
-                .getElementById("about-section")
-                .scrollIntoView({ behavior: "smooth" })
+              {
+                const element = document.getElementById("about-section");
+                if (element) element.scrollIntoView({ behavior: "smooth" });
+              }
             }
             className="hero-button bg-green-500 hover:bg-green-600 text-white font-bold py-3 px-8 rounded-full shadow-lg transform transition-all duration-300 hover:scale-105 opacity-0 transform translate-y-10 transition-all duration-700 delay-300"
           >
@@ -620,9 +636,14 @@ export default function EventoPage() {
                 </div>
               </div>
 
-              <button className="bg-green-600 hover:bg-green-700 text-white font-bold py-3 px-6 rounded-full flex items-center">
-                <MapPin className="mr-2" /> Ver en Google Maps
-              </button>
+              <a
+                href="https://maps.app.goo.gl/LYv4gnxUZgbFhsfH9"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="bg-green-600 hover:bg-green-700 text-white font-bold py-3 px-6 rounded-full flex items-center"
+              >
+                <MapPin className="mr-2" /> Ver en Google Maps              
+              </a>
             </div>
 
             <div className="md:w-1/2 relative">
@@ -633,7 +654,7 @@ export default function EventoPage() {
                     width="100%"
                     height="100%"
                     style={{ border: 0 }}
-                    allowFullScreen=""
+                    allowFullScreen
                     loading="lazy"
                     referrerPolicy="no-referrer-when-downgrade"
                     title="Mapa de Ubicación"
@@ -653,8 +674,11 @@ export default function EventoPage() {
 
       {/* IMAGE MODAL */}
       {activeImage && (
-        <div className="fixed inset-0 bg-black/90 z-50 flex items-center justify-center p-4">
-          <div className="relative max-w-4xl w-full">
+        <div
+          className="fixed inset-0 bg-black/90 z-50 flex items-center justify-center p-4"
+          onClick={closeImageModal}
+        >
+          <div className="relative max-w-4xl w-full" onClick={(e) => e.stopPropagation()}>
             <button
               onClick={closeImageModal}
               className="absolute top-4 right-4 text-white bg-black/50 rounded-full p-2 z-10 hover:bg-black/80 transition"
