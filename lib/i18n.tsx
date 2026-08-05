@@ -18,6 +18,8 @@ export interface Translations {
   municipalities: string
   about: string
   contact: string
+  language: string
+  selectLanguage: string
 
   // Hero Section
   heroText: string
@@ -112,6 +114,25 @@ export interface Translations {
   yourLocation: string
   viewDetails: string
 
+  // Transportation guide
+  gettingAround: string
+  gettingAroundSubtitle: string
+  organizeTrip: string
+  transportationOptions: string
+  airplane: string
+  bus: string
+  car: string
+  urbanTransport: string
+  distancesFromSantaCruz: string
+  distancesIntro: string
+  travelTip: string
+  travelerTips: string
+  safety: string
+  budget: string
+  planning: string
+  enjoyHospitality: string
+  updatedTourismInfo: string
+
   // Misc
   km: string
   na: string
@@ -131,6 +152,8 @@ const translations: Record<Language, Translations> = {
     municipalities: "Municipios",
     about: "Acerca de",
     contact: "Contacto",
+    language: "Idioma",
+    selectLanguage: "Seleccionar idioma",
 
     // Hero Section
     heroText: "Recorré los rincones más pintudos de la capital oriental.",
@@ -242,6 +265,8 @@ const translations: Record<Language, Translations> = {
     municipalities: "Municipalities",
     about: "About",
     contact: "Contact",
+    language: "Language",
+    selectLanguage: "Select language",
 
     // Hero Section
     heroText: "Is waiting for you",
@@ -336,10 +361,29 @@ const translations: Record<Language, Translations> = {
     yourLocation: "Your location",
     viewDetails: "View Details",
 
+    // Transportation guide
+    gettingAround: "Getting around Santa Cruz de la Sierra",
+    gettingAroundSubtitle: "Your complete guide to exploring the vibrant city and its surroundings",
+    organizeTrip: "Get organized and move around Santa Cruz with ease",
+    transportationOptions: "Transportation options",
+    airplane: "By airplane",
+    bus: "By bus",
+    car: "By car",
+    urbanTransport: "Urban transportation",
+    distancesFromSantaCruz: "Distances from Santa Cruz",
+    distancesIntro: "Santa Cruz is the perfect starting point for exploring nearby municipalities.",
+    travelTip: "Travel tip",
+    travelerTips: "Tips for travelers",
+    safety: "Safety",
+    budget: "Budget",
+    planning: "Planning",
+    enjoyHospitality: "Enjoy the warm hospitality and rich culture of Santa Cruz!",
+    updatedTourismInfo: "Updated tourism information",
+
     // Misc
     km: "km",
     na: "N/A",
-    of: "of",
+    of: "de",
   },
 
   pt: {
@@ -353,6 +397,8 @@ const translations: Record<Language, Translations> = {
     municipalities: "Municípios",
     about: "Sobre",
     contact: "Contato",
+    language: "Idioma",
+    selectLanguage: "Selecionar idioma",
 
     // Hero Section
     heroText: "Está esperando por você",
@@ -464,6 +510,8 @@ const translations: Record<Language, Translations> = {
     municipalities: "Táva",
     about: "Mba'éichapa",
     contact: "Ñe'ẽ",
+    language: "Ñe'ẽ",
+    selectLanguage: "Eiporavo ñe'ẽ",
 
     // Hero Section
     heroText: "Nde reha'arõ",
@@ -558,10 +606,48 @@ const translations: Record<Language, Translations> = {
     yourLocation: "Nde tenda",
     viewDetails: "Ehecha mba'emimi",
 
+    // Transportation guide
+    gettingAround: "Getting around Santa Cruz de la Sierra",
+    gettingAroundSubtitle: "Your complete guide to exploring the vibrant city and its surroundings",
+    organizeTrip: "Get organized and move around Santa Cruz with ease",
+    transportationOptions: "Transportation options",
+    airplane: "By airplane",
+    bus: "By bus",
+    car: "By car",
+    urbanTransport: "Urban transportation",
+    distancesFromSantaCruz: "Distances from Santa Cruz",
+    distancesIntro: "Santa Cruz is the perfect starting point for exploring nearby municipalities.",
+    travelTip: "Travel tip",
+    travelerTips: "Tips for travelers",
+    safety: "Safety",
+    budget: "Budget",
+    planning: "Planning",
+    enjoyHospitality: "Enjoy the warm hospitality and rich culture of Santa Cruz!",
+    updatedTourismInfo: "Updated tourism information",
+
+    // Transportation guide
+    gettingAround: "Como se locomover em Santa Cruz de la Sierra",
+    gettingAroundSubtitle: "Seu guia completo para explorar a cidade vibrante e seus arredores",
+    organizeTrip: "Organize-se para se locomover tranquilamente por Santa Cruz",
+    transportationOptions: "Opções de transporte",
+    airplane: "De avião",
+    bus: "De ônibus",
+    car: "De carro",
+    urbanTransport: "Transporte urbano",
+    distancesFromSantaCruz: "Distâncias de Santa Cruz",
+    distancesIntro: "Santa Cruz é o ponto de partida perfeito para explorar os municípios da região.",
+    travelTip: "Dica de viagem",
+    travelerTips: "Dicas para viajantes",
+    safety: "Segurança",
+    budget: "Orçamento",
+    planning: "Planejamento",
+    enjoyHospitality: "Aproveite a hospitalidade acolhedora e a rica cultura de Santa Cruz!",
+    updatedTourismInfo: "Informações turísticas atualizadas",
+
     // Misc
     km: "km",
     na: "N/A",
-    of: "guive",
+    of: "de",
   },
 
   qu: {
@@ -575,6 +661,8 @@ const translations: Record<Language, Translations> = {
     municipalities: "Llaqtakuna",
     about: "Imaynatas",
     contact: "Rimanakuy",
+    language: "Simi",
+    selectLanguage: "Simita akllay",
 
     // Hero Section
     heroText: "Qam suyasunki",
@@ -669,6 +757,44 @@ const translations: Record<Language, Translations> = {
     yourLocation: "Qam maypi kasqayki",
     viewDetails: "Detallekunata qaway",
 
+    // Transportation guide
+    gettingAround: "Mba'éichapa ñañemongu'e Santa Cruz de la Sierra-pe",
+    gettingAroundSubtitle: "Nde rape eikuaa hag̃ua táva ha ijerekuéra",
+    organizeTrip: "Eñembosako'i hag̃ua reñemongu'e porã Santa Cruz-pe",
+    transportationOptions: "Ñemongu'e rape kuéra",
+    airplane: "Avión-pe",
+    bus: "Autobús-pe",
+    car: "Kóche-pe",
+    urbanTransport: "Ñemongu'e táva ryepýpe",
+    distancesFromSantaCruz: "Mombyry Santa Cruz guive",
+    distancesIntro: "Santa Cruz ha'e pe ñepyrũha iporãvéva eikuaa hag̃ua táva kuéra ijerekuéva.",
+    travelTip: "Ñemoñe'ẽ tapicha guarápe",
+    travelerTips: "Ñemoñe'ẽ tapichakuérape guarã",
+    safety: "Tekorosã",
+    budget: "Virupururã",
+    planning: "Ñembosako'i",
+    enjoyHospitality: "¡Evy'a Santa Cruz retãygua ipy'a porã ha heko arandu rehe!",
+    updatedTourismInfo: "Marandu turística oñembopyahu",
+
+    // Transportation guide
+    gettingAround: "Santa Cruz de la Sierra llaqtapi puriy",
+    gettingAroundSubtitle: "Kusisqa llaqtata hinaspa muyuriqninkunata riqsinapaq pusaq",
+    organizeTrip: "Santa Cruzpi allin purinapaq wakichikuy",
+    transportationOptions: "Puriykunapaq akllanakuna",
+    airplane: "Aviónpi",
+    bus: "Autobúspi",
+    car: "Carropi",
+    urbanTransport: "Llaqtapi puriy",
+    distancesFromSantaCruz: "Santa Cruzmanta karukaykuna",
+    distancesIntro: "Santa Cruzqa muyuriq llaqtakunata riqsinapaq allin qallariymi.",
+    travelTip: "Puriypaq yuyay",
+    travelerTips: "Puriykuqkunapaq yuyaykuna",
+    safety: "Allin kawsay",
+    budget: "Qullqi",
+    planning: "Wakichiy",
+    enjoyHospitality: "¡Santa Cruzpa sumaq chaskiyta hinaspa qhapaq kawsayninta kusikuy!",
+    updatedTourismInfo: "Musuqyachisqa turista willakuy",
+
     // Misc
     km: "km",
     na: "N/A",
@@ -705,16 +831,23 @@ export function LanguageProvider({ children }: LanguageProviderProps) {
     }
   }, [])
 
-  // Save language to localStorage when changed
+  // Save the selected language and keep the document language accessible to browsers and screen readers.
   useEffect(() => {
     if (typeof window !== "undefined") {
       localStorage.setItem("language", language)
+      document.documentElement.lang = language
     }
   }, [language])
 
+  const changeLanguage = (nextLanguage: Language) => {
+    if (translations[nextLanguage]) {
+      setLanguage(nextLanguage)
+    }
+  }
+
   const contextValue: LanguageContextType = {
     language,
-    setLanguage,
+    setLanguage: changeLanguage,
     t: translations[language],
   }
 
