@@ -4,11 +4,8 @@ import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import { Menu, X } from "lucide-react"; // Asegúrate de tener lucide-react instalado
 import Image from "next/image";
-import { LanguageSelector } from "@/components/language-selector";
-import { useLanguage } from "@/lib/i18n";
 
 const ComoMoverse = () => {
-  const { t } = useLanguage();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
 
@@ -39,11 +36,11 @@ const ComoMoverse = () => {
             />
             <img
               src="/Logotipo 3 verde.png"
-              alt={t.title}
+              alt="Turismo Metropolitano Logo"
               className="w-10 h-10"
             />
             <span className="font-bold text-green-700 text-2xl">
-              {t.title}
+              Turismo Metropolitano
             </span>
           </Link>
           {/* Enlaces centrados (desktop) */}
@@ -57,7 +54,7 @@ const ComoMoverse = () => {
                     : "text-black"
                 }`}
               >
-                {t.home}
+                Inicio
               </Link>
               <Link
                 href="/explore"
@@ -67,7 +64,7 @@ const ComoMoverse = () => {
                     : "text-black"
                 }`}
               >
-                {t.explore}
+                Explorar
               </Link>
                              <Link
                 href="/infosantacruz"
@@ -101,15 +98,13 @@ const ComoMoverse = () => {
               )}
             </button>
           </div>
-          <div className="hidden md:flex justify-end">
-            <LanguageSelector variant="desktop" isScrolled={isScrolled} />
-          </div>
+          {/* Espacio vacío solo en desktop */}
+          <div className="hidden md:block" />
         </div>
         {/* Menú móvil */}
         {isMenuOpen && (
           <div className="md:hidden bg-white px-4 pb-4">
             <div className="flex flex-col items-start gap-4">
-              <LanguageSelector variant="mobile" />
               <Link
                 href="/"
                 className="hover:text-green-700 transition font-medium"
@@ -122,7 +117,7 @@ const ComoMoverse = () => {
                 className="hover:text-green-700 transition font-medium"
                 onClick={() => setIsMenuOpen(false)}
               >
-                {t.explore}
+                Explorar
               </Link>
                              <Link
                   href="/infosantacruz"
@@ -150,10 +145,10 @@ const ComoMoverse = () => {
             className="text-4xl md:text-5xl mb-6 text-center italic text-white-700 drop-shadow-lg"
             style={{ fontFamily: "'Great Vibes', cursive", fontWeight: 500 }}
           >
-            {t.gettingAround}
+            Cómo Moverse en Santa Cruz de la Sierra
           </h1>
           <p className="text-xl max-w-2xl text-center px-4">
-            {t.gettingAroundSubtitle}
+            Tu guía completa para explorar la vibrante ciudad y sus alrededores
           </p>
         </div>
         <Image
@@ -169,7 +164,7 @@ const ComoMoverse = () => {
       <div className="container mx-auto px-4 py-12 max-w-6xl">
         <div className="bg-white rounded-xl shadow-lg p-8 mb-12">
           <h2 className="text-3xl font-bold text-gray-800 mb-6 text-center">
-            {t.organizeTrip}
+            Organizate pa’ moverte tranquilo por Santa Cruz
           </h2>
           <p className="text-lg text-gray-700 mb-6">
             Santa Cruz de la Sierra, la ciudad más grande de Bolivia, te espera
@@ -192,7 +187,7 @@ const ComoMoverse = () => {
             </div>
             <div className="bg-purple-100 p-4 rounded-lg flex flex-col items-center">
               <div className="text-4xl mb-2">🚕</div>
-              <p className="font-medium">{t.urbanTransport}</p>
+              <p className="font-medium">Transporte Urbano</p>
             </div>
           </div>
         </div>
@@ -200,7 +195,7 @@ const ComoMoverse = () => {
         {/* Distancias y Tiempos */}
         <div className="bg-gradient-to-r from-green-500 to-blue-600 rounded-xl shadow-lg p-8 mb-12 text-white">
           <h2 className="text-3xl font-bold mb-6 text-center">
-            {t.distancesFromSantaCruz}
+            Distancias desde Santa Cruz
           </h2>
           <p className="text-lg mb-8 text-center max-w-3xl mx-auto">
             Santa Cruz es el punto de partida perfecto para que te mandés a
@@ -317,7 +312,7 @@ const ComoMoverse = () => {
                 objectFit="cover"
               />
               <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black to-transparent p-4">
-                <h2 className="text-2xl font-bold text-white">{t.airplane}</h2>
+                <h2 className="text-2xl font-bold text-white">En Avión</h2>
               </div>
             </div>
             <div className="p-6">
@@ -367,7 +362,7 @@ const ComoMoverse = () => {
                 objectFit="cover"
               />
               <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black to-transparent p-4">
-                <h2 className="text-2xl font-bold text-white">{t.bus}</h2>
+                <h2 className="text-2xl font-bold text-white">En Autobús</h2>
               </div>
             </div>
             <div className="p-6">
@@ -421,7 +416,7 @@ const ComoMoverse = () => {
                 objectFit="cover"
               />
               <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black to-transparent p-4">
-                <h2 className="text-2xl font-bold text-white">{t.car}</h2>
+                <h2 className="text-2xl font-bold text-white">En Coche</h2>
               </div>
             </div>
             <div className="p-6">
@@ -469,7 +464,7 @@ const ComoMoverse = () => {
             </div>
           </div>
 
-          {/* {t.urbanTransport} */}
+          {/* Transporte Urbano */}
           <div className="bg-white rounded-xl shadow-lg overflow-hidden">
             <div className="relative h-60">
               <Image
@@ -480,7 +475,7 @@ const ComoMoverse = () => {
               />
               <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black to-transparent p-4">
                 <h2 className="text-2xl font-bold text-white">
-                  {t.urbanTransport}
+                  Transporte Urbano
                 </h2>
               </div>
             </div>
@@ -525,7 +520,7 @@ const ComoMoverse = () => {
         {/* Consejos Finales */}
         <div className="bg-gradient-to-r from-orange-400 to-red-500 rounded-xl shadow-lg p-8 text-white">
           <h2 className="text-3xl font-bold mb-6 text-center">
-            {t.travelerTips}
+            Consejos para Viajeros
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             <div className="bg-white bg-opacity-20 p-6 rounded-lg backdrop-blur-sm">
@@ -564,7 +559,7 @@ const ComoMoverse = () => {
       <footer className="bg-gray-800 text-white py-8">
         <div className="container mx-auto px-4 text-center">
           <p>© 2026 Santa Cruz de la Sierra - Bolivia</p>
-          <p className="mt-2">{t.updatedTourismInfo}</p>
+          <p className="mt-2">Información turística actualizada</p>
         </div>
       </footer>
     </main>
