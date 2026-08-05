@@ -18,6 +18,8 @@ export interface Translations {
   municipalities: string
   about: string
   contact: string
+  language: string
+  selectLanguage: string
 
   // Hero Section
   heroText: string
@@ -130,9 +132,11 @@ const translations: Record<Language, Translations> = {
     categories: "Categorías",
     municipalities: "Municipios",
     about: "Acerca de",
-    contact: "Contacto",
+  contact: "Contacto",
+  language: "Idioma",
+  selectLanguage: "Seleccionar idioma",
 
-    // Hero Section
+  // Hero Section
     heroText: "Recorré los rincones más pintudos de la capital oriental.",
     exploreNow: "Explorar Ahora",
     topPlaces: "Lugares Top",
@@ -241,9 +245,11 @@ const translations: Record<Language, Translations> = {
     categories: "Categories",
     municipalities: "Municipalities",
     about: "About",
-    contact: "Contact",
+  contact: "Contact",
+  language: "Language",
+  selectLanguage: "Select language",
 
-    // Hero Section
+  // Hero Section
     heroText: "Is waiting for you",
     exploreNow: "Explore Now",
     topPlaces: "Top Places",
@@ -352,9 +358,11 @@ const translations: Record<Language, Translations> = {
     categories: "Categorias",
     municipalities: "Municípios",
     about: "Sobre",
-    contact: "Contato",
+  contact: "Contato",
+  language: "Idioma",
+  selectLanguage: "Selecionar idioma",
 
-    // Hero Section
+  // Hero Section
     heroText: "Está esperando por você",
     exploreNow: "Explorar Agora",
     topPlaces: "Lugares Top",
@@ -463,9 +471,11 @@ const translations: Record<Language, Translations> = {
     categories: "Ñemohenda",
     municipalities: "Táva",
     about: "Mba'éichapa",
-    contact: "Ñe'ẽ",
+  contact: "Ñe'ẽ",
+  language: "Ñe'ẽ",
+  selectLanguage: "Eiporavo ñe'ẽ",
 
-    // Hero Section
+  // Hero Section
     heroText: "Nde reha'arõ",
     exploreNow: "Jaheka ko'ág̃a",
     topPlaces: "Tenda porãvéva",
@@ -574,9 +584,11 @@ const translations: Record<Language, Translations> = {
     categories: "T'aqakuna",
     municipalities: "Llaqtakuna",
     about: "Imaynatas",
-    contact: "Rimanakuy",
+  contact: "Rimanakuy",
+  language: "Simi",
+  selectLanguage: "Simita akllay",
 
-    // Hero Section
+  // Hero Section
     heroText: "Qam suyasunki",
     exploreNow: "Kunan maskay",
     topPlaces: "Aswan allin sitikuna",

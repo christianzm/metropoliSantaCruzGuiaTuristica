@@ -22,12 +22,12 @@ export function LanguageSelector({ variant = "desktop", isScrolled = false }: La
       <div className="py-4 border-t border-gray-200">
         <div className="flex items-center space-x-3 px-4">
           <Globe className="w-5 h-5 text-gray-500" />
-          <span className="text-sm font-medium text-gray-700">{t("languageSelector.language")}</span>
+          <span className="text-sm font-medium text-gray-700">{t.language}</span>
         </div>
         <div className="mt-3 px-4">
           <Select value={language} onValueChange={(value: Language) => setLanguage(value)}>
             <SelectTrigger className="w-full">
-              <SelectValue placeholder={t("languageSelector.selectLanguage")}>
+              <SelectValue placeholder={t.selectLanguage}>
                 <div className="flex items-center space-x-2">
                   <span>{currentLanguage?.flag}</span>
                   <span>{currentLanguage?.name}</span>
