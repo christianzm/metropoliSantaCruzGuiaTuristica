@@ -47,7 +47,7 @@ const Folletos = () => {
     <div className="flex flex-col min-h-screen bg-white">
       {/* NAVBAR INICIO */}
       <nav className="bg-white shadow-md sticky top-0 z-50">
-        <div className="mx-auto flex w-full max-w-[1920px] items-center justify-between gap-3 px-3 py-2 sm:px-5 lg:grid lg:grid-cols-3 lg:gap-6 lg:px-8 lg:py-3 2xl:px-12">
+        <div className="container mx-auto px-4 py-3 flex items-center justify-between md:grid md:grid-cols-3 md:items-center">
           {/* Logo y nombre */}
           <Link
             href="/"

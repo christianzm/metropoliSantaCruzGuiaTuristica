@@ -295,40 +295,39 @@ export default function ExplorePage() {
   return (
     <div className="min-h-screen bg-gray-50">
       {/* Header */}
-      <header className="sticky top-0 z-50 border-b bg-white shadow-sm">
-        <div className="mx-auto w-full max-w-[1800px] px-3 sm:px-4 lg:px-6">
-          <div className="flex min-h-16 flex-wrap items-center justify-between gap-2 py-2 sm:flex-nowrap sm:gap-4 sm:py-0">
-            <Link href="/" className="flex min-w-0 flex-1 items-center gap-1.5 sm:gap-2">
+      <header className="bg-white shadow-sm border-b sticky top-0 z-50">
+        <div className="container mx-auto px-4">
+          <div className="flex items-center justify-between h-16">
+            <Link href="/" className="flex items-center space-x-2">
               <Image
                 src="/logo upds verde.png"
                 alt="Logotipo"
-                width={96}
-                height={32}
-                className="h-auto max-h-8 w-auto shrink-0 object-contain sm:max-h-10"
+                width={120}
+                height={40}
+                className="object-contain h-auto w-auto max-h-10"
                 priority
               />
               <Image
                 src="/Logotipo 3 verde.png"
                 alt="Logotipo"
-                width={96}
-                height={32}
-                className="hidden h-auto max-h-8 w-auto shrink-0 object-contain xs:block sm:max-h-10"
+                width={120}
+                height={40}
+                className="object-contain h-auto w-auto max-h-10"
                 priority
               />
-              <span className="hidden truncate text-base font-bold text-green-700 sm:block lg:text-xl">
+              <span className="text-xl font-bold text-green-700">
                 {t.title}
               </span>
             </Link>
 
-            <div className="flex shrink-0 items-center gap-1.5 sm:gap-2 lg:gap-3">
+            <div className="flex items-center space-x-4">
               <Button
                 variant="outline"
                 size="sm"
                 onClick={() => setShowFilters(!showFilters)}
-                className="px-2 md:hidden"
-                aria-label={t.explore}
+                className="md:hidden"
               >
-                <Filter className="size-4" />
+                <Filter className="w-4 h-4 mr-2" />
               </Button>
 
               <Button
@@ -336,13 +335,12 @@ export default function ExplorePage() {
                 size="sm"
                 variant="outline"
                 disabled={cacheLoading}
-                className="px-2 sm:px-3"
-                aria-label={t.update}
               >
                 <RefreshCw
-                  className={`size-4 ${cacheLoading ? "animate-spin" : ""}`}
+                  className={`w-4 h-4 mr-2 ${
+                    cacheLoading ? "animate-spin" : ""
+                  }`}
                 />
-                <span className="sr-only">{t.refresh}</span>
               </Button>
 
               <div className="hidden md:block">
@@ -353,10 +351,10 @@ export default function ExplorePage() {
                 <Button
                   onClick={requestLocation}
                   size="sm"
-                  className="max-w-[9rem] bg-green-600 px-2 hover:bg-green-700 sm:max-w-none sm:px-3"
+                  className="bg-green-600 hover:bg-green-700"
                 >
-                  <Navigation className="size-4 shrink-0 sm:mr-2" />
-                  <span className="hidden sm:inline">{t.allowLocation}</span>
+                  <Navigation className="w-4 h-4 mr-2" />
+                  {t.allowLocation}
                 </Button>
               )}
             </div>
@@ -364,10 +362,10 @@ export default function ExplorePage() {
         </div>
       </header>
 
-      <div className="flex h-[calc(100dvh-5rem)] min-h-0 flex-col md:h-[calc(100dvh-4rem)] md:flex-row">
+      <div className="flex h-[calc(100vh-4rem)]">
         {/* Sidebar with filters and results */}
         <div
-          className={`absolute inset-0 z-40 w-full overflow-y-auto bg-white md:relative md:inset-auto md:z-auto md:w-80 lg:w-96 md:border-r ${
+          className={`w-full md:w-96 bg-white border-r overflow-y-auto ${
             showFilters ? "block" : "hidden md:block"
           }`}
         >
@@ -485,7 +483,7 @@ export default function ExplorePage() {
               <label className="block text-sm font-medium text-gray-700 mb-2">
                 {t.sortBy}
               </label>
-              <div className="grid grid-cols-2 gap-2 sm:flex">
+              <div className="flex gap-2">
                 <Button
                   variant={
                     sortOptions.field === "rating" ? "default" : "outline"
@@ -542,7 +540,7 @@ export default function ExplorePage() {
           </div>
 
           {/* Results List */}
-          <div className="flex flex-col gap-4 p-3 sm:p-4">
+          <div className="p-4 space-y-4">
             {filteredPlaces.map((place) => {
               const primaryCategory = getPrimaryCategory(place);
               const categoryIcon = primaryCategory
