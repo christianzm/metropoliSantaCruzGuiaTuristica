@@ -23,11 +23,11 @@ const ComoMoverse = () => {
     <main className="bg-white text-gray-800 font-sans">
       {/* NAVBAR INICIO */}
       <nav className="bg-white shadow-md sticky top-0 z-50">
-        <div className="container mx-auto px-4 py-3 flex items-center justify-between md:grid md:grid-cols-3 md:items-center">
+        <div className="container mx-auto flex w-full max-w-screen-2xl flex-wrap items-center justify-between gap-3 px-3 py-2.5 sm:px-4 sm:py-3 md:grid md:grid-cols-[minmax(0,1fr)_auto_minmax(0,1fr)] md:items-center">
           {/* Logo y nombre */}
           <Link
             href="/"
-            className="flex items-center gap-3 select-none hover:opacity-80 transition"
+            className="flex min-w-0 items-center gap-1.5 select-none transition hover:opacity-80 sm:gap-3"
           >
             <img
               src="/logo upds verde.png"
@@ -39,13 +39,13 @@ const ComoMoverse = () => {
               alt="Turismo Metropolitano Logo"
               className="w-10 h-10"
             />
-            <span className="font-bold text-green-700 text-2xl">
+            <span className="max-w-[7rem] truncate text-sm font-bold text-green-700 sm:max-w-[14rem] sm:text-xl lg:text-2xl">
               Turismo Metropolitano
             </span>
           </Link>
           {/* Enlaces centrados (desktop) */}
           <div className="hidden md:flex justify-center">
-            <div className="flex gap-8 items-center">
+            <div className="flex flex-wrap items-center justify-center gap-x-4 gap-y-2 lg:gap-x-7">
               <Link
                 href="/"
                 className={`transition-colors hover:text-green-400 ${
@@ -90,7 +90,7 @@ const ComoMoverse = () => {
           </div>
           {/* Botón menú móvil */}
           <div className="md:hidden">
-            <button onClick={() => setIsMenuOpen(!isMenuOpen)}>
+            <button type="button" aria-expanded={isMenuOpen} aria-label={isMenuOpen ? "Cerrar menú" : "Abrir menú"} onClick={() => setIsMenuOpen(!isMenuOpen)} className="rounded-md p-2 text-green-700 transition hover:bg-green-50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-green-600">
               {isMenuOpen ? (
                 <X className="w-6 h-6 text-green-700" />
               ) : (
@@ -103,8 +103,8 @@ const ComoMoverse = () => {
         </div>
         {/* Menú móvil */}
         {isMenuOpen && (
-          <div className="md:hidden bg-white px-4 pb-4">
-            <div className="flex flex-col items-start gap-4">
+          <div className="md:hidden border-t border-green-100 bg-white px-3 pb-4 pt-3 sm:px-4">
+            <div className="flex flex-col items-stretch gap-1">
               <Link
                 href="/"
                 className="hover:text-green-700 transition font-medium"
@@ -556,10 +556,10 @@ const ComoMoverse = () => {
       </div>
 
       {/* Footer */}
-      <footer className="bg-gray-800 text-white py-8">
-        <div className="container mx-auto px-4 text-center">
-          <p>© 2026 Santa Cruz de la Sierra - Bolivia</p>
-          <p className="mt-2">Información turística actualizada</p>
+      <footer className="bg-gray-800 px-3 py-8 text-white sm:px-4 sm:py-10">
+        <div className="container mx-auto max-w-screen-2xl text-center">
+          <p className="text-sm leading-6 sm:text-base">© 2026 Santa Cruz de la Sierra - Bolivia</p>
+          <p className="mt-2 text-sm leading-6 sm:text-base">Información turística actualizada</p>
         </div>
       </footer>
     </main>

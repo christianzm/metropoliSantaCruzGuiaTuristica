@@ -359,11 +359,11 @@ export default function HomePage() {
             : "bg-transparent"
         }`}
       >
-        <div className="container mx-auto px-4">
-          <div className="flex items-center justify-between h-16">
+        <div className="container mx-auto w-full max-w-screen-2xl px-3 sm:px-4 lg:px-6">
+          <div className="flex min-h-16 flex-wrap items-center justify-between gap-2 py-2 sm:flex-nowrap sm:py-0">
             {/* Logo */}
-            <div className="flex items-center space-x-2">
-              <div className="relative w-12 h-12">
+            <div className="flex min-w-0 items-center gap-1.5 sm:gap-2">
+              <div className="relative size-10 shrink-0 sm:size-12">
                 <Image
                   src={isScrolled ? "/logo upds verde.png" : "/logo upds.png"}
                   alt="Turismo Metropolitano Logo"
@@ -372,7 +372,7 @@ export default function HomePage() {
                   priority
                 />
               </div>
-              <div className="relative w-12 h-12">
+              <div className="relative size-10 shrink-0 sm:size-12">
                 <Image
                   src={
                     isScrolled
@@ -386,7 +386,7 @@ export default function HomePage() {
                 />
               </div>
               <span
-                className={`text-xl font-bold transition-colors ${
+                className={`max-w-[8rem] truncate text-sm font-bold transition-colors sm:max-w-[14rem] sm:text-lg lg:max-w-none lg:text-xl ${
                   isScrolled ? "text-green-700" : "text-white"
                 }`}
               >
@@ -395,7 +395,7 @@ export default function HomePage() {
             </div>
 
             {/* Desktop Navigation */}
-            <nav className="hidden md:flex items-center space-x-6">
+            <nav aria-label="Navegación principal" className="hidden flex-1 items-center justify-center gap-3 lg:flex lg:gap-5 xl:gap-7">
               <Link
                 href="/"
                 className={`transition-colors hover:text-green-400 ${
@@ -460,13 +460,16 @@ export default function HomePage() {
             </nav>
 
             {/* Desktop Language Selector */}
-            <div className="hidden md:block">
+            <div className="hidden shrink-0 lg:block">
               <LanguageSelector variant="desktop" isScrolled={isScrolled} />
             </div>
 
             {/* Mobile Menu Button */}
             <button
-              className="md:hidden"
+              type="button"
+              aria-expanded={isMenuOpen}
+              aria-label={isMenuOpen ? "Cerrar menú" : "Abrir menú"}
+              className="rounded-md p-2 lg:hidden"
               onClick={() => setIsMenuOpen(!isMenuOpen)}
             >
               {isMenuOpen ? (
@@ -487,42 +490,42 @@ export default function HomePage() {
 
           {/* Mobile Menu */}
           {isMenuOpen && (
-            <div className="md:hidden bg-white/95 backdrop-blur-md border-t border-white/20">
-              <nav className="flex flex-col py-4">
+            <div className="border-t border-white/20 bg-background/95 backdrop-blur-md lg:hidden">
+              <nav aria-label="Navegación móvil" className="flex flex-col gap-1 p-3 sm:p-4">
                 <Link
                   href="/"
-                  className="py-3 px-4 text-gray-700 hover:text-green-600 hover:bg-gray-50"
+                  className="rounded-md px-3 py-3 text-sm leading-6 text-foreground transition-colors hover:bg-muted hover:text-primary sm:text-base"
                 >
                   {t.home}
                 </Link>
                 <Link
                   href="/explore"
-                  className="py-3 px-4 text-gray-700 hover:text-green-600 hover:bg-gray-50"
+                  className="rounded-md px-3 py-3 text-sm leading-6 text-foreground transition-colors hover:bg-muted hover:text-primary sm:text-base"
                 >
                   {t.explore}
                 </Link>
                 <Link
                   href="#featured"
-                  className="py-3 px-4 text-gray-700 hover:text-green-600 hover:bg-gray-50"
+                  className="rounded-md px-3 py-3 text-sm leading-6 text-foreground transition-colors hover:bg-muted hover:text-primary sm:text-base"
                 >
                   {t.featured}
                 </Link>
                 <Link
                   href="#categories"
-                  className="py-3 px-4 text-gray-700 hover:text-green-600 hover:bg-gray-50"
+                  className="rounded-md px-3 py-3 text-sm leading-6 text-foreground transition-colors hover:bg-muted hover:text-primary sm:text-base"
                 >
                   {t.categories}
                 </Link>
                 <Link
                   href="/infosantacruz"
-                  className="py-3 px-4 text-gray-700 hover:text-green-600 hover:bg-gray-50"
+                  className="rounded-md px-3 py-3 text-sm leading-6 text-foreground transition-colors hover:bg-muted hover:text-primary sm:text-base"
                 >
                   Santa Cruz
                 </Link>
 
                 <Link
                   href="/entretenimiento"
-                  className="py-3 px-4 text-gray-700 hover:text-green-600 hover:bg-gray-50"
+                  className="rounded-md px-3 py-3 text-sm leading-6 text-foreground transition-colors hover:bg-muted hover:text-primary sm:text-base"
                 >
                   Rincones para Disfrutar
                 </Link>
@@ -638,7 +641,7 @@ export default function HomePage() {
       </section>
       {/* Tourism Guide Section - Complete */}
       <section className="py-16 md:py-24 bg-white">
-        <div className="container mx-auto px-4">
+        <div className="container mx-auto w-full max-w-screen-2xl px-3 sm:px-4 lg:px-6">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-0 max-w-7xl mx-auto shadow-2xl rounded-2xl overflow-hidden">
             {/* Left Side - Green Instructions */}
             <div className="bg-green-600 text-white p-8 md:p-12 flex flex-col justify-center">
@@ -918,7 +921,7 @@ export default function HomePage() {
 
       {/* Weather Widget and Action Buttons Section - Complete */}
       <section className="bg-white py-8">
-        <div className="container mx-auto px-4">
+        <div className="container mx-auto w-full max-w-screen-2xl px-3 sm:px-4 lg:px-6">
           <div className="grid md:grid-cols-2 gap-10 items-center">
             {/* El widget del clima ocupa la primera columna */}
             <WeatherWidget />
@@ -931,7 +934,7 @@ export default function HomePage() {
 
       {/* Featured Places */}
       <section id="featured" className="py-16 md:py-24 bg-white">
-        <div className="container mx-auto px-4">
+        <div className="container mx-auto w-full max-w-screen-2xl px-3 sm:px-4 lg:px-6">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
               {t.featured}
@@ -993,7 +996,7 @@ export default function HomePage() {
 
       {/* Categories */}
       <section id="categories" className="py-16 md:py-24 bg-gray-50">
-        <div className="container mx-auto px-4">
+        <div className="container mx-auto w-full max-w-screen-2xl px-3 sm:px-4 lg:px-6">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
               {t.categories}
@@ -1068,12 +1071,12 @@ export default function HomePage() {
       </section>
 
       {/* Footer */}
-      <footer className="bg-gray-900 text-white py-16">
-        <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+      <footer className="bg-gray-900 py-10 text-white sm:py-14 lg:py-16">
+        <div className="container mx-auto w-full max-w-screen-2xl px-3 sm:px-4 lg:px-6">
+          <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4 lg:gap-10">
             <div>
-              <div className="flex items-center space-x-3 mb-6">
-                <div className="relative w-12 h-12">
+              <div className="mb-5 flex items-center gap-3 sm:mb-6">
+                <div className="relative size-10 shrink-0 sm:size-12">
                   <Image
                     src="/Logotipo 3 blanco.png"
                     alt="Turismo Metropolitano Logo"
@@ -1088,7 +1091,7 @@ export default function HomePage() {
 
             <div>
               <h3 className="font-bold mb-6 text-lg">{t.links}</h3>
-              <ul className="space-y-3 text-gray-400">
+              <ul className="flex flex-col gap-3 text-sm leading-6 text-gray-400 sm:text-base">
                 <li>
                   <Link href="/" className="hover:text-white transition-colors">
                     {t.home}
@@ -1123,7 +1126,7 @@ export default function HomePage() {
 
             <div>
               <h3 className="font-bold mb-6 text-lg">{t.municipalities}</h3>
-              <ul className="space-y-3 text-gray-400">
+              <ul className="flex flex-col gap-3 text-sm leading-6 text-gray-400 sm:text-base">
                 {cacheData?.municipalities?.slice(0, 4).map((municipality) => (
                   <li key={municipality.name}>
                     {municipality.name} ({municipality.count})
@@ -1134,7 +1137,7 @@ export default function HomePage() {
 
             <div>
               <h3 className="font-bold mb-6 text-lg">{t.statistics}</h3>
-              <div className="space-y-3 text-gray-400">
+              <div className="flex flex-col gap-3 text-sm leading-6 text-gray-400 sm:text-base">
                 <p>
                   {cacheData?.places?.length || 0} {t.touristicPlaces}
                 </p>
