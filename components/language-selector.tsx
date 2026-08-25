@@ -15,7 +15,7 @@ export function LanguageSelector({ variant = "desktop", isScrolled = false }: La
   const { language, setLanguage, t } = useLanguage()
   const [isOpen, setIsOpen] = useState(false)
 
-  const currentLanguage = languageOptions.find((lang) => lang.code === language)
+  const currentLanguage = languageOptions.find((lang) => lang.code === language) ?? languageOptions[0]
 
   if (variant === "mobile") {
     return (
@@ -56,6 +56,7 @@ export function LanguageSelector({ variant = "desktop", isScrolled = false }: La
         variant="ghost"
         size="sm"
         onClick={() => setIsOpen(!isOpen)}
+        aria-label={t.selectLanguage}
         className={`flex items-center space-x-2 transition-colors ${
           isScrolled
             ? "text-gray-700 hover:text-green-600 hover:bg-gray-100"

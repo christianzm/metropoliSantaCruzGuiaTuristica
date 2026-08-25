@@ -711,8 +711,10 @@ export function LanguageProvider({ children }: LanguageProviderProps) {
   useEffect(() => {
     if (typeof window !== "undefined") {
       const savedLang = localStorage.getItem("language") as Language
-      if (savedLang && translations[savedLang]) {
+      if (savedLang && Object.prototype.hasOwnProperty.call(translations, savedLang)) {
         setLanguage(savedLang)
+      } else {
+        localStorage.removeItem("language")
       }
     }
   }, [])
