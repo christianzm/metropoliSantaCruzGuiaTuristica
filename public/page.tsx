@@ -207,21 +207,21 @@ export default function ExplorePage() {
       {/* Header */}
       <header className="bg-white shadow-sm border-b sticky top-0 z-50">
         <div className="container mx-auto px-4">
-          <div className="flex items-center justify-between h-16">
-          <Link href="/" className="flex items-center space-x-2">
+  <div className="flex min-h-16 flex-wrap items-center justify-between gap-2 py-2 sm:flex-nowrap sm:gap-4 sm:py-0">
+  <Link href="/" className="flex min-w-0 shrink items-center gap-2">
             <Image
               src="/Logotipo 3 verde.png"
               alt="Logotipo"
               width={120}
               height={40}
-              className="object-contain h-auto w-auto max-h-10"
+              className="h-auto w-auto max-h-8 max-w-[38vw] object-contain sm:max-h-10 sm:max-w-none"
               priority
             />
-            <span className="text-xl font-bold text-green-700">{t.title}</span>
+            <span className="hidden truncate text-base font-bold text-green-700 sm:inline sm:text-xl">{t.title}</span>
           </Link>
 
 
-            <div className="flex items-center space-x-4">
+            <div className="flex min-w-0 shrink-0 items-center gap-1 sm:gap-3">
               <Button variant="outline" size="sm" onClick={() => setShowFilters(!showFilters)} className="md:hidden">
                 <Filter className="w-4 h-4 mr-2" />
                 
