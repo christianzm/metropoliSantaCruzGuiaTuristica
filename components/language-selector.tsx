@@ -57,7 +57,7 @@ export function LanguageSelector({ variant = "desktop", isScrolled = false }: La
         size="sm"
         onClick={() => setIsOpen(!isOpen)}
         aria-label={t.selectLanguage}
-        className={`flex items-center space-x-2 transition-colors ${
+        className={`flex h-9 items-center gap-1 px-2 transition-colors sm:gap-2 sm:px-3 ${
           isScrolled
             ? "text-gray-700 hover:text-green-600 hover:bg-gray-100"
             : "text-white hover:text-green-400 hover:bg-white/10"
@@ -75,7 +75,7 @@ export function LanguageSelector({ variant = "desktop", isScrolled = false }: La
           <div className="fixed inset-0 z-40" onClick={() => setIsOpen(false)} />
 
           {/* Dropdown */}
-          <div className="absolute right-0 top-full mt-2 w-48 bg-white rounded-lg shadow-lg border z-50 py-2">
+          <div className="absolute right-0 top-full z-50 mt-2 w-[min(12rem,calc(100vw-1rem))] rounded-lg border bg-white py-2 shadow-lg">
             {languageOptions.map((lang) => (
               <button
                 key={lang.code}

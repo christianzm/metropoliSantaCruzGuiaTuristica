@@ -17,7 +17,6 @@ import { recordPlaceView, recordPlaceClick } from "@/lib/database";
 import { useLanguage } from "@/lib/i18n";
 import { LanguageSelector } from "@/components/language-selector";
 import type { PlaceWithDetails } from "@/lib/supabase";
-import { DivIcon } from "leaflet";
 import Image from "next/image";
 import { useRouter, useSearchParams } from "next/navigation";
 
@@ -321,7 +320,7 @@ export default function ExplorePage() {
               </span>
             </Link>
 
-            <div className="flex shrink-0 items-center gap-1 sm:gap-2 lg:gap-3">
+            <div className="flex min-w-0 shrink-0 items-center justify-end gap-1 sm:gap-2 lg:gap-3">
               <Button
                 variant="outline"
                 size="sm"
@@ -354,10 +353,10 @@ export default function ExplorePage() {
                 <Button
                   onClick={requestLocation}
                   size="sm"
-                  className="bg-green-600 hover:bg-green-700"
+                  className="max-w-[42vw] shrink-0 bg-green-600 hover:bg-green-700 px-2 sm:max-w-none sm:px-3"
                 >
                   <Navigation className="w-4 h-4 mr-2" />
-                  {t.allowLocation}
+                  <span className="hidden max-w-[24ch] truncate sm:inline">{t.allowLocation}</span>
                 </Button>
               )}
             </div>

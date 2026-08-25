@@ -17,7 +17,6 @@ import { recordPlaceView, recordPlaceClick } from "@/lib/database"
 import { useLanguage } from "@/lib/i18n"
 import { LanguageSelector } from "@/components/language-selector"
 import type { PlaceWithDetails } from "@/lib/supabase"
-import { DivIcon } from 'leaflet';
 import Image from "next/image";
 
 // Dynamically import map components to avoid SSR issues
